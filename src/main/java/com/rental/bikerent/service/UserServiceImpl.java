@@ -20,6 +20,7 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 @Service
+
 public class UserServiceImpl implements UserService{
 
     private UserRepository userRepository;
@@ -37,7 +38,7 @@ public class UserServiceImpl implements UserService{
     public User save(UserRegistrationDto registrationDto) throws Exception {
         User user = new User(registrationDto.getFirstName(),
                 registrationDto.getLastName(), registrationDto.getEmail(),
-                passwordEncoder.encode(registrationDto.getPassword()), Arrays.asList(new Role("ROLE_USER")));
+                Encryption.encrypt(registrationDto.getPassword()), Arrays.asList(new Role("ROLE_USER")));
 
         return userRepository.save(user);
     }

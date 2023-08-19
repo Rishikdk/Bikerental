@@ -8,17 +8,17 @@ import java.util.Collection;
 public class User {
 
     @Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)//auto inc
     private Long id;
 
-    @Column(name = "first_name")
+    @Column(length = 100, name = "first_name")
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(length = 100,name = "last_name")
     private String lastName;
 
     private String email;
-
+    @Column(length = 16,name = "Password")
     private String password;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -80,4 +80,16 @@ public class User {
         this.roles = roles;
     }
 
+    //refrence print
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", roles=" + roles +
+                '}';
+    }
 }

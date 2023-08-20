@@ -1,24 +1,19 @@
 package com.rental.bikerent.configu;
 
 import java.util.Collection;
-
-import org.hibernate.mapping.List;
+import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import  com.rental.bikerent.model.User;
 
 
 public class CustomUserDetails implements UserDetails{
     private User user;
-
     public CustomUserDetails(User user) {
         super();
         this.user = user;
-    }
-
-    public CustomUserDetails(com.rental.bikerent.model.User user) {
     }
 
     @Override

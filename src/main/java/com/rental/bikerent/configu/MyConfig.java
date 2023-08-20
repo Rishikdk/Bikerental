@@ -50,14 +50,14 @@ public class MyConfig {
         http.authorizeHttpRequests()
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .requestMatchers("/user/**").hasRole("USER")
-                .requestMatchers("/**").permitAll().and().formLogin()
 
+                .requestMatchers("/**").permitAll().and().formLogin()
                 .loginPage("/login").loginProcessingUrl("/login")
-                .defaultSuccessUrl("/user/profile")
+                .defaultSuccessUrl("/user/home")
 
                 .and().csrf().disable();
 
-        http.formLogin().defaultSuccessUrl("/user/profile", true);
+        http.formLogin().defaultSuccessUrl("/user/home", true);
 
         return http.build();
     }

@@ -5,7 +5,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 public class Encryption {
-    private static final String secretKey = "kandogldlrltpsog";
+   /* private static final String secretKey = "kandogldlrltpsog";
 
     public static String encrypt(String data) throws Exception {
         SecretKeySpec secretKeySpec = new SecretKeySpec(secretKey.getBytes(StandardCharsets.UTF_8), "AES");
@@ -23,6 +23,6 @@ public class Encryption {
 
         byte[] decryptedBytes = cipher.doFinal(Base64.getDecoder().decode(encryptedData));
         return new String(decryptedBytes, StandardCharsets.UTF_8);
-    }
+    }*/
 
 }

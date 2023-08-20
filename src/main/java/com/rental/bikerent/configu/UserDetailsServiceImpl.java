@@ -1,4 +1,4 @@
-package com.rental.bikerent.service;
+package com.rental.bikerent.configu;
 
 import com.rental.bikerent.configu.CustomUserDetails;
 

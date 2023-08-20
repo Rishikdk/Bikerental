@@ -5,23 +5,22 @@ import javax.validation.constraints.Email;
 
 
 @Entity
-@Table(name =  "user", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name = "user", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class User {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)//auto inc
     private Long id;
 
-    @Column(length = 100, name = "first_name")
+//    @Column(length = 100, name = "first_name")
     private String firstName;
 
-    @Column(length = 100,name = "last_name")
+//    @Column(length = 100,name = "last_name")
     private String lastName;
 
-    @Email(regexp="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")
+//    @Email(regexp="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")
 
     private String email;
-    @Column(length = 16,name = "Password")
     private String password;
     private String role;
 

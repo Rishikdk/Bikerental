@@ -19,13 +19,9 @@ import javax.validation.Valid;
 @RequestMapping("/user")
 public class UserController {
 
-    @RequestMapping("/login")
-    public String login(){
-        return "login";
-    }
     @RequestMapping("/home")
     public String home(){
-        return "normal/userhome";
+        return "Normal/userhome";
     }
 
 }

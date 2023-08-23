@@ -48,7 +48,7 @@ public class MyConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/user/**").hasRole("USER")
                 .antMatchers("/**").permitAll()
-                .and().formLogin().loginPage("/do_login")
+                .and().formLogin().loginPage("/login")
                 .loginProcessingUrl("/do_login")
                 .defaultSuccessUrl("/user/home").and().csrf().disable();
 

@@ -14,13 +14,13 @@ public class MainController {
 //    {
 //
 //        return "Profile";
-//    }
-//    @RequestMapping("/about")
-//    public String about()
-//    {
-//
-//        return "about";
-//    }
+ //   }
+    @RequestMapping("/about")
+    public String about()
+    {
+
+        return "about";
+    }
     @RequestMapping("/login")
     public String login()
     {

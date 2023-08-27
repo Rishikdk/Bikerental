@@ -1,5 +1,6 @@
 package com.rental.bikerent.configu;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -9,11 +10,14 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 
 @Configuration
 @EnableWebSecurity
 public class MyConfig extends WebSecurityConfigurerAdapter {
+    @Autowired
+    public AuthenticationSuccessHandler customSuccessHandler;
 
     @Bean
     public UserDetailsService getUserDetailsService() {
@@ -49,9 +53,9 @@ public class MyConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").hasRole("USER")
                 .antMatchers("/**").permitAll()
                 .and().formLogin().loginPage("/login")
-                .loginProcessingUrl("/do_login")
-                .defaultSuccessUrl("/user/home").and().csrf().disable();
+                .loginProcessingUrl("/login")
+                .successHandler(customSuccessHandler).and().csrf().disable();
 
-        http.formLogin().defaultSuccessUrl("/user/home", true);
+//        http.formLogin().defaultSuccessUrl("/user/home", true);
     }
 }

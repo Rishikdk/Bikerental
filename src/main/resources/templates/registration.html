@@ -41,6 +41,7 @@
 
 
     <h1>Registration</h1>
+    <!-- first name -->
 
     <form th:action="@{/do_register}" method="post" th:object="${user}">
         <div class="form-group">
@@ -49,12 +50,14 @@
                    required autofocus="autofocus" />
         </div>
 
+        <!-- last name -->
         <div class="form-group">
             <label class="control-label" for="lastName"> Last Name </label> <input
                 name="lastName" id="lastName" class="form-control" th:field="*{lastName}"
                 required autofocus="autofocus" />
         </div>
 
+        <!-- email -->
         <div class="form-group">
             <label class="control-label" for="email"> Email </label> <input
                 name="email" id="email" class="form-control" th:field="*{email}" required

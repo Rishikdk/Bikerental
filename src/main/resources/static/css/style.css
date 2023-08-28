@@ -9,20 +9,20 @@
    max-width: 100%;
    justify-content: center;
 }
-html
+.html
 {
     font-size: 20px;
     font-family: 'montserrat' , san-serif;
     color: darkgrey;
     /* background-image: linear-gradient(to right, #dedce2 40%, #8274a6); */
 }
-body
+.body
 {
     width: 100%;
     height: auto;
     align-items: center;
 }
-button.normal
+.button.normal
 {
     font-size: 14px;
     font-weight: 600;
@@ -93,7 +93,7 @@ button.normal
 
 #topic
 {
-    background-image: url(images/background3.webp);
+    background-image: url("/images/background3.webp");
     width: 100%;
     height: 90vh;
     background-size: cover;
@@ -283,7 +283,7 @@ button.normal
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-image: url(images/banner3.png);
+    background-image: url("/images/banner3.png");
     width: 100%;
     height: 40vh;
     background-size: cover;
@@ -324,7 +324,7 @@ button.normal
     text-align: center;
     justify-content: center;
     align-items: flex-start;
-    background-image: url(images/banner4.jpg);
+    background-image: url("/images/banner4.jpg");
     min-width: 580px;
     height: 50vh;
     background-size: cover;
@@ -334,7 +334,7 @@ button.normal
 }
 #sm-banner .banner-box2
 {
-    background-image: url(images/banner5.jpg);
+    background-image: url("/images/banner5.jpg");
 }
 #sm-banner h4{
     color: #fff;
@@ -358,7 +358,7 @@ button.normal
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    background-image: url(images/banner6.jpg);
+    background-image: url("/images/banner6.jpg");
     background-position: 20% 30%;
     padding: 40px 80px;
     margin: 10px 0;
@@ -431,7 +431,7 @@ footer .col2
 
 #topic2
 {
-    background-image: url(images/background2.avif);
+    background-image: url("/images/background2.avif");
     width: 100%;
     height: 90vh;
     background-size: cover;
@@ -472,7 +472,7 @@ footer .col2
 
 #topic3
 {
-    background-image: url(images/background4.webp);
+    background-image: url("/images/background4.webp");
     width: 100%;
     height: 90vh;
     background-size: cover;

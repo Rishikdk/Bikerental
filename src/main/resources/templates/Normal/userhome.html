@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RENTAL</title>
-    <link rel="stylesheet" href="../../static/style.css">
-<!--    <link rel="stylesheet" th:href="@{/style.css}">-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/8973e71845.js" crossorigin="anonymous"></script>
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>RENTAL-HOME</title>-->
+<!--    <link rel="stylesheet" href="../../static/css/style.css">-->
+<!--&lt;!&ndash;    <link rel="stylesheet" th:href="@{/style.css}">&ndash;&gt;-->
+<!--    -->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>-->
+<!--    <script src="https://kit.fontawesome.com/8973e71845.js" crossorigin="anonymous"></script>-->
 
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 <body>
 
@@ -48,6 +57,10 @@
                     <a class="nav-link" href="#">CONTACTS</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{/logout}">LOGOUT</a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link" href="#"> <i class="fa-solid fa-user"></i></a>
                 </li>
 
@@ -73,23 +86,23 @@
 <section id="feature">
 
     <div class="fe-box">
-        <img src="../../static/images/f1.jpg" alt="f1">
+        <img src="/images/f1.jpg" alt="f1">
         <p>Free Shipping</p>
     </div>
     <div class="fe-box">
-        <img src="../../static/images/f2.png" alt="f2">
+        <img src="/images/f2.png" alt="f2">
         <p>Online Order</p>
     </div>
     <div class="fe-box">
-        <img src="../../static/images/f3.jpg" alt="f3">
+        <img src="/images/f3.jpg" alt="f3">
         <p>Save Money</p>
     </div>
     <div class="fe-box">
-        <img src="../../static/images/f4.avif" alt="f4">
+        <img src="/images/f4.avif" alt="f4">
         <p>Happy Selling</p>
     </div>
     <div class="fe-box">
-        <img src="../../static/images/f5.avif" alt="f5">
+        <img src="/images/f5.avif" alt="f5">
         <p>F24/7 Support</p>
     </div>
 </section>
@@ -99,7 +112,7 @@
     <p> <span>A summary Collection of the New Model </span></p>
     <div class="pro-container">
         <div class="pro">
-            <img src="../../static/images/background2.avif" alt="image1">
+            <img src="/images/background2.avif" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astraunt</h5>
@@ -108,7 +121,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background2.avif" alt="image1">
+            <img src="/images/background2.avif" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astronaut</h5>
@@ -117,7 +130,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background2.avif" alt="image1">
+            <img src="/images/background2.avif" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astronaut</h5>
@@ -126,7 +139,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background2.avif" alt="image1">
+            <img src="/images/background2.avif" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astronaut</h5>
@@ -135,7 +148,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background2.avif" alt="image1">
+            <img src="/images/background2.avif" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astronaut</h5>
@@ -144,7 +157,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background2.avif" alt="image1">
+            <img src="/images/background2.avif" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astronaut</h5>
@@ -153,7 +166,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background2.avif" alt="image1">
+            <img src="/images/background2.avif" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astronaut</h5>
@@ -162,7 +175,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background2.avif" alt="image1">
+            <img src="/images/background2.avif" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astraunt</h5>
@@ -171,7 +184,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background2.avif" alt="image1">
+            <img src="/images/background2.avif" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astronaut</h5>
@@ -189,12 +202,12 @@
 
 </section>
 
-<section id="products1">
+<section id="products2">
     <h2>NEW ARRIVALS</h2>
     <p> <span>A summary Collection of the New Model </span></p>
     <div class="pro-container">
         <div class="pro">
-            <img src="../../static/images/background5.webp" alt="image1">
+            <img src="/images/background5.webp" alt="image1">
             <div class="desc">
                 <span>Hero</span>
                 <h5>Mig Man</h5>
@@ -203,7 +216,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background3.webp" alt="image2">
+            <img src="/images/background3.webp" alt="image2">
             <div class="desc">
                 <span>Lifelong</span>
                 <h5>LLb</h5>
@@ -212,7 +225,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background5.webp" alt="image3">
+            <img src="/images/background5.webp" alt="image3">
             <div class="desc">
                 <span>Hero</span>
                 <h5>Mig Man</h5>
@@ -221,7 +234,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background5.webp" alt="image1">
+            <img src="/images/background5.webp" alt="image1">
             <div class="desc">
                 <span>Hero</span>
                 <h5>Mig Man</h5>
@@ -230,7 +243,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background3.webp" alt="image2">
+            <img src="/images/background3.webp" alt="image2">
             <div class="desc">
                 <span>Lifelong</span>
                 <h5>LLb</h5>
@@ -239,7 +252,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background5.webp" alt="image3">
+            <img src="/images/background5.webp" alt="image3">
             <div class="desc">
                 <span>Hero</span>
                 <h5>Mig Man</h5>
@@ -248,7 +261,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background5.webp" alt="image1">
+            <img src="/images/background5.webp" alt="image1">
             <div class="desc">
                 <span>Hero</span>
                 <h5>Mig Man</h5>
@@ -257,7 +270,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background3.webp" alt="image2">
+            <img src="/images/background3.webp" alt="image2">
             <div class="desc">
                 <span>Lifelong</span>
                 <h5>LLb</h5>
@@ -266,7 +279,7 @@
         </div>
 
         <div class="pro">
-            <img src="../../static/images/background5.webp" alt="image3">
+            <img src="/images/background5.webp" alt="image3">
             <div class="desc">
                 <span>Hero</span>
                 <h5>Mig Man</h5>
@@ -354,7 +367,7 @@
 <footer>
 
     <div class="col1">
-        <img src="../../static/images/logo.png" alt="logo" width="150px" height="150px">
+        <img src="/images/logo.png" alt="logo" width="150px" height="150px">
         <h3>CONTACT</h3>
         <p><strong>Address: </strong> Putalisadak, Kathmandu</p>
         <p><strong>Phone number: </strong> Putalisadak, Kathmandu</p>
@@ -374,11 +387,11 @@
         <h4>Install App</h4>
         <p>From the App Store or Google play</p>
         <div class="row">
-            <img src="../../static/images/appStorelogo.jpeg" alt="logo1" width="100px" height="100px">
-            <img src="../../static/images/googleStorelogo.jpeg" alt="logo2" width="100px" height="100px">
+            <img src="/images/appStorelogo.jpeg" alt="logo1" width="100px" height="100px">
+            <img src="/images/googleStorelogo.jpeg" alt="logo2" width="100px" height="100px">
         </div>
         <p>Secured Payment Gateways</p>
-        <img src="../../static/images/visa2.jpeg" alt="paymentlogo" width="250px" height="80px">
+        <img src="/images/visa2.jpeg" alt="paymentlogo" width="250px" height="80px">
     </div>
 </footer>
 <div class="footer-bottom">

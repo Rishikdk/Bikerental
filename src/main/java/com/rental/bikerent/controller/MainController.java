@@ -15,6 +15,13 @@ public class MainController {
 //
 //        return "Profile";
  //   }
+@RequestMapping("/home")
+public String mainpage()
+{
+
+    return "mainpage";
+
+}
     @RequestMapping("/about")
     public String about()
     {
@@ -24,7 +31,6 @@ public class MainController {
     @RequestMapping("/login")
     public String login()
     {
-
         return "login";
     }
 

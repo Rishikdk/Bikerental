@@ -13,5 +13,12 @@ public class AdminController {
         return "Admin/home";
     }
 
+    @GetMapping("/product")
+    public String product(){
+
+        return "Admin/product";
+    }
+
+
 
 }

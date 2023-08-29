@@ -187,54 +187,60 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="">
+
+<!--                <form action="post">-->
+                <form th:action="@{/admin/product}" method="post" th:object="${product}">
 
                     <select class="form-select" aria-label="Default select example">
                         <option selected>Select the product category</option>
                         <option value="1">SELLING PRODUCTS</option>
                         <option value="2">RENTING PRODUCTS</option>
+                        <form th:action="@{/admin/product}" method="post" th:object="${product}">
+
+                            <div class="form-group" style="margin-top: 3px;">
+                                <input type="text" class="form-control" name="productName" placeholder="Enter the products name here..." required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <textarea style="height: 250px; margin-top: 3px;" class="form-control" name="productDescription" placeholder="Enter the product description here" required></textarea>
+                            </div>
+
+                            <div class="form-group" style="margin-top: 3px;">
+                                <input type="number" class="form-control" name="productPrice" placeholder="Enter the final selling price here..." required>
+
+                            </div>
+
+                            <div class="form-group" style="margin-top: 3px;">
+                                <input type="number" class="form-control" name="productDiscount" placeholder="Enter Discount here..." required>
+
+                            </div>
+
+                            <div class="form-group" style="margin-top: 3px;">
+                                <input type="number" class="form-control" name="productQuantity" placeholder="Enter the products quantity here..." required>
+
+                            </div>
+
+                            <div class="form-group" style="margin-top: 3px;">
+                                <input type="date" class="form-control" name="productQuantity" placeholder="Last repaired on..." required>
+
+                            </div>
+
+                            <div class="mb-3" style="margin-top: 3px;">
+                                <!-- <label for="formFileMultiple" class="form-label"></label> -->
+                                <input class="form-control" type="file" id="formFileMultiple" multiple>
+                            </div>
+
+                            <div class="button text-center" style="margin-top: 3px;">
+                                <button class="btn btn-outline-success">SUBMIT</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+
+                        </form>
+
 
                     </select>
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="text" class="form-control" name="productName" placeholder="Enter the products name here..." required>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <textarea style="height: 250px; margin-top: 3px;" class="form-control" name="productDescription" placeholder="Enter the product description here" required></textarea>
-                    </div>
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="number" class="form-control" name="productPrice" placeholder="Enter the final selling price here..." required>
-
-                    </div>
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="number" class="form-control" name="productDiscount" placeholder="Enter Discount here..." required>
-
-                    </div>
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="number" class="form-control" name="productQuantity" placeholder="Enter the products quantity here..." required>
-
-                    </div>
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="date" class="form-control" name="productQuantity" placeholder="Last repaired on..." required>
-
-                    </div>
-
-                    <div class="mb-3" style="margin-top: 3px;">
-                        <!-- <label for="formFileMultiple" class="form-label"></label> -->
-                        <input class="form-control" type="file" id="formFileMultiple" multiple>
-                    </div>
-
-                    <div class="button text-center" style="margin-top: 3px;">
-                        <button class="btn btn-outline-success">SUBMIT</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
 
                 </form>
             </div>

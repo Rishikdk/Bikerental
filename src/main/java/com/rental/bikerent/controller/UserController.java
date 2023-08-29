@@ -23,6 +23,20 @@ public class UserController {
     public String home(){
         return "Normal/userhome";
     }
+    @RequestMapping("/contact")
+    public String about() {
+        return "Normal/contact";
+    }
+
+    @RequestMapping("/service")
+    public String service() {
+            return "Normal/service";
+        }
+        @RequestMapping("/product")
+        public String product(){
+            return "Normal/product";
+    }
+
 
 }
 

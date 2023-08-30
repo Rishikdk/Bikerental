@@ -1,5 +1,7 @@
 <!-- <%@page contentType="text/html" pageEncoding="UTF-8"%> -->
 <!DOCTYPE html>
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org"-->
+<!--      th:fragment="layout(content)" >-->
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -180,21 +182,41 @@
 <!-- start add products -->
 
 <div class="modal" id="add-products-modal" tabindex="-1" data-bs-backdrop="static">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-secondary text-white">
                 <h5 class="modal-title"> FILL PRODUCTS DETAIL</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="">
 
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Select the product category</option>
-                        <option value="1">SELLING PRODUCTS</option>
-                        <option value="2">RENTING PRODUCTS</option>
 
-                    </select>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rentForm" >
+                    RENTING FORM
+                </button>
+
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sellForm" >
+                    SELLING FORM
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--renting form start-->
+
+
+<div class="modal fade" id="rentForm" tabindex="-1" aria-labelledby="rentFormLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="rentFormLabel">Renting Form</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="post">
+
 
                     <div class="form-group" style="margin-top: 3px;">
                         <input type="text" class="form-control" name="productName" placeholder="Enter the products name here..." required>
@@ -235,7 +257,6 @@
                         <button class="btn btn-outline-success">SUBMIT</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
-
                 </form>
             </div>
         </div>
@@ -243,6 +264,91 @@
 </div>
 
 
+<!--renting form ends here-->
+
+<!--selling form start-->
+
+<div class="modal fade" id="sellForm" tabindex="-1" aria-labelledby="rentFormLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="rentFormLabel1">Renting Form</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="post">
+
+                    <div class="form-group" style="margin-top: 3px;">
+                        <input type="number" class="form-control" name="productDiscount" placeholder="Enter Id here..." required>
+
+                    </div>
+
+
+                    <div class="form-group" style="margin-top: 3px;">
+                        <input type="text" class="form-control" name="productName" placeholder="Enter the products name here..." required>
+
+                    </div>
+
+                    <div class="form-group">
+                        <textarea style="height: 250px; margin-top: 3px;" class="form-control" name="productDescription" placeholder="Enter the product description here" required></textarea>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 3px;">
+                        <input type="number" class="form-control" name="productPrice" placeholder="Enter the selling price here..." required>
+
+                    </div>
+
+                    <div class="form-group" style="margin-top: 3px;">
+                        <input type="number" class="form-control" name="productDiscount" placeholder="Enter Discount here..." required>
+
+                    </div>
+
+                    <div class="form-group" style="margin-top: 3px;">
+                        <input type="text" class="form-control" name="productDiscount" placeholder="Enter brand name here..." required>
+
+                    </div>
+
+                    <div class="form-group" style="margin-top: 3px;">
+                        <input type="number" class="form-control" name="productQuantity" placeholder="Enter the products quantity here..." required>
+
+                    </div>
+
+                    <div class="mb-3" style="margin-top: 3px;">
+                        <!-- <label for="formFileMultiple" class="form-label"></label> -->
+                        <input class="form-control" type="file" id="formFileMultiple1" multiple>
+                    </div>
+
+                    <div class="button text-center" style="margin-top: 3px;">
+                        <button class="btn btn-outline-success">SUBMIT</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--selling form ends here-->
+
+
+
+
 <!-- end add products -->
+
+<!--<script>-->
+
+<!--    function showsellingform() {-->
+<!--  var rendingform = document.getElementById("rentingform");-->
+<!--  var sellingform = document.getElementById("sellingform");-->
+<!--  rendingform.style.display = "none";-->
+<!--  sellingform.style.display = "block";-->
+<!--}-->
+<!--function showrendintform() {-->
+<!--  var rendingform = document.getElementById("rentingform");-->
+<!--  var sellingform = document.getElementById("sellingform");-->
+<!--  rendingform.style.display = "block";-->
+<!--  sellingform.style.display = "none";-->
+<!--}-->
+<!--</script>-->
 </body>
 </html>

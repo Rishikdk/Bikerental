@@ -16,7 +16,7 @@ public class AdminController {
     @GetMapping("/product")
     public String product(){
 
-        return "Admin/product";
+        return "Admin/home";
     }
 
 

@@ -1,5 +1,6 @@
 package com.rental.bikerent.controller;
 
+import com.rental.bikerent.Email.EmailSenderService;
 import com.rental.bikerent.model.User;
 import com.rental.bikerent.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,11 @@ public class UserRegister {
 
             System.out.println("USER" + user);
             User result = this.userRepository.save(user);
+            String to = user.getEmail();
+            String subject = "Rental Bikes Welcomes!";
+            String body = "Sucessfully Resgistered";
+            System.out.printf(to);
+            EmailSenderService.sendSimpleEmail(to,subject,body);
 //            model.addAttribute("user", new User());
             /*session.setAttribute("message", new Message("Successfully Register!!",
                     "alert-error"));*/

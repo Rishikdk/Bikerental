@@ -18,8 +18,8 @@ public class Product {
     private int pQuantity;
 
     private int pbooked;
-    @ManyToOne
-   private Category category;
+//    @ManyToOne
+//    private Category category;
 
 
     public int getpId() {

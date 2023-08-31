@@ -3,7 +3,7 @@ package com.rental.bikerent.map;
 import com.rental.bikerent.Email.EmailSenderService;
 import com.rental.bikerent.model.User;
 import com.rental.bikerent.repository.UserRepository;
-import org.apache.commons.lang3.RandomStringUtils;
+//import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -13,7 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.apache.commons.lang3.RandomStringUtils;
+//import org.apache.commons.lang3.RandomStringUtils;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -35,15 +35,15 @@ public class UserRegister {
             user.setRole("ROLE_USER");
 
             user.setPassword(PasswordEncoder.encode(user.getPassword()));
-            String otp = RandomStringUtils.randomNumeric(6);
+//            String otp = RandomStringUtils.randomNumeric(6);
 
             System.out.println("USER" + user);
             User result = this.userRepository.save(user);
             String to = user.getEmail();
             String subject = "Rental Bikes Welcomes!";
-            String body = otp;
+//            String body = otp;
             System.out.printf(to);
-            EmailSenderService.sendSimpleEmail(to,subject,body);
+          //  EmailSenderService.sendSimpleEmail(to,subject,body);
 
 //            String otp = RandomStringUtils.randomNumeric(6); // Generate a 6-digit numeric OTP
 //            SimpleMailMessage message = new SimpleMailMessage();

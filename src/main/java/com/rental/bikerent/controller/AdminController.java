@@ -3,11 +3,14 @@ package com.rental.bikerent.controller;
 import com.rental.bikerent.model.Category;
 import com.rental.bikerent.model.Product;
 import com.rental.bikerent.model.User;
+import com.rental.bikerent.repository.AcategoryRepository;
 import com.rental.bikerent.repository.RentalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/admin")
@@ -15,7 +18,7 @@ public class AdminController {
     @GetMapping("/")
     public String admin(){
 
-        return "Admin/home";
+        return"Admin/home";
     }
 
     @RequestMapping("/add_category")
@@ -24,11 +27,13 @@ public class AdminController {
         model.addAttribute("category",new Category());
         return "/Admin/addcategory";
     }
-
+@Autowired
+private AcategoryRepository acategoryRepository;
     @RequestMapping("/add_Rproduct")
     public String aRproduct(Model model){
         model.addAttribute("title","Product-Bike Rental");
       model.addAttribute("product",new Product());
+      model.addAttribute("categories", acategoryRepository.findAll());
         return "/Admin/addRproduct";
     }
     @RequestMapping("/add_Sproduct")

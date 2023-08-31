@@ -4,6 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+        <style>
+                .dropdown-toggle::after {
+                  content: none;
+                }
+                body
+                {
+                    margin: 0px;
+                }
+
+                .container .card:hover
+                {
+                    background: #e2e2e2;
+                    cursor: pointer;
+                }
+            </style>
 </head>
 <body>
 <section>
@@ -22,10 +37,23 @@
 
   <h1 class="modal-title fs-5" id="rentFormLabel">Renting Product</h1>
         <div class="modal-body">
-          <form  action="@{/add_Rentingp}" method="post" >
+          <form  th:action="@{/add_Renting}" method="post" th:object="${product}" >
+
+              <div class="dropdown mr-1">
+                  <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+                      Offset
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+              </div>
 
 
-            <div class="form-group" style="margin-top: 3px;">
+
+
+              <div class="form-group" style="margin-top: 3px;">
               <input type="text" class="form-control" name="pName" placeholder="Enter the products name here..." required>
 
             </div>
@@ -34,6 +62,11 @@
 
             <!--                        <textarea style="height: 250px; margin-top: 3px;" class="form-control" name="productDescription" placeholder="Enter the product description here" required></textarea>-->
             <!--                    </div>-->
+
+              <div class="form-group" style="margin-top: 3px;">
+                  <input type="number" class="form-control" name="category" placeholder="Enter the category id..." required>
+
+              </div>
 
             <div class="form-group" style="margin-top: 3px;">
               <input type="number" class="form-control" name="pPrice" placeholder="Enter the final selling price here..." required>
@@ -47,10 +80,6 @@
 
             <div class="form-group" style="margin-top: 3px;">
               <input type="number" class="form-control" name="pQuantity" placeholder="Enter the products quantity here..." required>
-
-            </div>
-            <div class="form-group" style="margin-top: 3px;">
-              <input type="number" class="form-control" name="pbooked" placeholder="Number of booked bike" required>
 
             </div>
 

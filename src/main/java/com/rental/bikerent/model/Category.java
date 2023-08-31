@@ -12,8 +12,8 @@ public class Category {
     private int categoryId;
     private  String categoryTitle;
     private String categoryDec;
-//@OneToMany(mappedBy = "category")
-//    private List<Product> product= new ArrayList<>();
+@OneToMany(mappedBy = "category")
+    private List<Product> product= new ArrayList<>();
 
     public Category() {
     }

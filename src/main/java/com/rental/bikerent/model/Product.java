@@ -1,7 +1,11 @@
 package com.rental.bikerent.model;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 @Table(name = "product")
@@ -13,7 +17,8 @@ public class Product {
     private int pPrice;
     @Column(nullable = true, length=65)
     private String pPic;
-    private Date pRepair;
+
+    private java.sql.Date pRepair;
     private int pDiscount;
 
     private int pQuantity;
@@ -109,3 +114,10 @@ public class Product {
                 '}';
     }
 }
+//    public void setpRepair(String pRepair) throws ParseException {
+////        DateTimeFormatter formatter= DateTimeFormatter.ofPattern("yyyy-mm-dd");
+//
+//        SimpleDateFormat receivedDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+//        java.util.Date date = receivedDateFormat.parse(pRepair);
+//        this.pRepair = java.sql.Date.valueOf(LocalDate.now());
+//    }

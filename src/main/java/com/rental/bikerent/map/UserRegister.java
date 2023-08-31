@@ -1,4 +1,4 @@
-package com.rental.bikerent.controller;
+package com.rental.bikerent.map;
 
 import com.rental.bikerent.Email.EmailSenderService;
 import com.rental.bikerent.model.User;

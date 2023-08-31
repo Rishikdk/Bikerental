@@ -12,29 +12,11 @@ public class Category {
     private int categoryId;
     private  String categoryTitle;
     private String categoryDec;
-@OneToMany(mappedBy = "category")
-    private List<Product> product= new ArrayList<>();
+//@OneToMany(mappedBy = "category")
+//    private List<Product> product= new ArrayList<>();
 
     public Category() {
     }
-
-    public Category(int categoryId, String categoryTitle, String categoryDec) {
-        this.categoryId = categoryId;
-        this.categoryTitle = categoryTitle;
-        this.categoryDec = categoryDec;
-    }
-
-    public Category(List<Product> product) {
-        this.product = product;
-    }
-
-    public Category(String categoryTitle, String categoryDec) {
-        this.categoryTitle = categoryTitle;
-        this.categoryDec = categoryDec;
-
-    }
-
-
 
     public int getCategoryId() {
         return categoryId;
@@ -58,14 +40,6 @@ public class Category {
 
     public void setCategoryDec(String categoryDec) {
         this.categoryDec = categoryDec;
-    }
-
-    public List<Product> getProduct() {
-        return product;
-    }
-
-    public void setProduct(List<Product> product) {
-        this.product = product;
     }
 
     @Override

@@ -1,26 +1,23 @@
-package com.rental.bikerent.model;
+package com.rental.bikerent.map;
 
-import javax.persistence.*;
+import com.rental.bikerent.model.Category;
+
+import javax.persistence.Column;
+import javax.persistence.ManyToOne;
 import java.util.Date;
 
-@Entity
-@Table(name = "product")
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class AdRproductDto {
     private Long pId;
     private String pName;
     private int pPrice;
-    @Column(nullable = true, length=65)
+
     private String pPic;
     private Date pRepair;
     private int pDiscount;
 
     private int pQuantity;
-
+private long categoryId;
     private int pbooked;
-    @ManyToOne
-   private Category category;
 
     public Long getpId() {
         return pId;
@@ -86,17 +83,9 @@ public class Product {
         this.pbooked = pbooked;
     }
 
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
     @Override
     public String toString() {
-        return "Product{" +
+        return "AdRproductDto{" +
                 "pId=" + pId +
                 ", pName='" + pName + '\'' +
                 ", pPrice=" + pPrice +
@@ -105,7 +94,6 @@ public class Product {
                 ", pDiscount=" + pDiscount +
                 ", pQuantity=" + pQuantity +
                 ", pbooked=" + pbooked +
-                ", category=" + category +
                 '}';
     }
 }

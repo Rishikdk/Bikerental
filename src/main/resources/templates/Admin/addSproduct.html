@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="admin/base::layout(~{::section})">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<section>
+
+<!--  <div class="modal fade" id="sellForm" tabindex="-1" aria-labelledby="rentFormLabel1" aria-hidden="true">-->
+<!--    <div class="modal-dialog">-->
+<!--      <div class="modal-content">-->
+<!--        <div class="modal-header">-->
+<!--          <h1 class="modal-title fs-5" id="rentFormLabel1">Selling Product</h1>-->
+<!--          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--        </div>-->
+        <div class="modal-body">
+          <form th:action="@{/add_Sproduct}" method="post" th:object="${sell}">
+
+            <div class="form-group" style="margin-top: 3px;">
+              <input type="number" class="form-control" name="id" placeholder="Enter Id here..." required>
+
+            </div>
+
+
+            <div class="form-group" style="margin-top: 3px;">
+              <input type="text" class="form-control" name="sname" placeholder="Enter the products name here..." required>
+
+            </div>
+
+            <div class="form-group">
+              <textarea style="height: 250px; margin-top: 3px;" class="form-control" name="sdec" placeholder="Enter the product description here" required></textarea>
+            </div>
+
+            <div class="form-group" style="margin-top: 3px;">
+              <input type="number" class="form-control" name="sprice" placeholder="Enter the selling price here..." required>
+
+            </div>
+
+            <div class="form-group" style="margin-top: 3px;">
+              <input type="number" class="form-control" name="sdis" placeholder="Enter Discount here..." required>
+
+            </div>
+
+            <div class="form-group" style="margin-top: 3px;">
+              <input type="text" class="form-control" name="sbrand" placeholder="Enter brand name here..." required>
+
+            </div>
+
+            <div class="form-group" style="margin-top: 3px;">
+              <input type="number" class="form-control" name="squantity" placeholder="Enter the products quantity here..." required>
+
+            </div>
+
+            <div class="mb-3" style="margin-top: 3px;">
+              <!-- <label for="formFileMultiple" class="form-label"></label> -->
+              <input class="form-control" type="file" id="formFileMultiple1" multiple>
+            </div>
+
+            <div class="button text-center" style="margin-top: 3px;">
+              <button  type="submit" class="btn btn-outline-success">SUBMIT</button>
+              <a href="/" th:href="@{/admin/}">ADMIN </a>
+<!--              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

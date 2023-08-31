@@ -40,21 +40,21 @@
 <section id="navbar">
     <div class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#" th:href="@{/user/home}">
                 <h3>RENTAL</h3>
             </a>
             <ul class="nav justify-content-end" style="color: aliceblue;">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-house"></i> HOME</a>
+                    <a class="nav-link active" aria-current="page" href="#" th:href="@{/user/home}"><i class="fa-solid fa-house"></i> HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">PRODUCTS</a>
+                    <a class="nav-link" href="#" th:href="@{/user/product}">PRODUCTS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">SERVICES</a>
+                    <a class="nav-link" href="#" th:href="@{/user/service}">SERVICES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">CONTACTS</a>
+                    <a class="nav-link" href="#" th:href="@{/user/contact}">CONTACTS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" th:href="@{/logout}">LOGOUT</a>
@@ -98,11 +98,11 @@
         <p>Save Money</p>
     </div>
     <div class="fe-box">
-        <img src="/images/f4.avif" alt="f4">
+        <img src="/images/f4.jpg" alt="f4">
         <p>Happy Selling</p>
     </div>
     <div class="fe-box">
-        <img src="/images/f5.avif" alt="f5">
+        <img src="/images/f5.jpg" alt="f5">
         <p>F24/7 Support</p>
     </div>
 </section>
@@ -112,7 +112,7 @@
     <p> <span>A summary Collection of the New Model </span></p>
     <div class="pro-container">
         <div class="pro">
-            <img src="/images/background2.avif" alt="image1">
+            <img src="/images/background2.jpg" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astraunt</h5>
@@ -121,7 +121,7 @@
         </div>
 
         <div class="pro">
-            <img src="/images/background2.avif" alt="image1">
+            <img src="/images/background4.webp" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astronaut</h5>
@@ -130,7 +130,7 @@
         </div>
 
         <div class="pro">
-            <img src="/images/background2.avif" alt="image1">
+            <img src="/images/background2.jpg" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astronaut</h5>
@@ -139,7 +139,7 @@
         </div>
 
         <div class="pro">
-            <img src="/images/background2.avif" alt="image1">
+            <img src="/images/background2.jpg" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astronaut</h5>
@@ -148,7 +148,7 @@
         </div>
 
         <div class="pro">
-            <img src="/images/background2.avif" alt="image1">
+            <img src="/images/background4.webp" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astronaut</h5>
@@ -157,7 +157,7 @@
         </div>
 
         <div class="pro">
-            <img src="/images/background2.avif" alt="image1">
+            <img src="/images/background2.jpg" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astronaut</h5>
@@ -166,7 +166,7 @@
         </div>
 
         <div class="pro">
-            <img src="/images/background2.avif" alt="image1">
+            <img src="/images/background2.jpg" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astronaut</h5>
@@ -175,7 +175,7 @@
         </div>
 
         <div class="pro">
-            <img src="/images/background2.avif" alt="image1">
+            <img src="/images/background4.webp" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astraunt</h5>
@@ -184,7 +184,7 @@
         </div>
 
         <div class="pro">
-            <img src="/images/background2.avif" alt="image1">
+            <img src="/images/background2.jpg" alt="image1">
             <div class="desc">
                 <span>BMW</span>
                 <h5>Astronaut</h5>
@@ -370,8 +370,8 @@
         <img src="/images/logo.png" alt="logo" width="150px" height="150px">
         <h3>CONTACT</h3>
         <p><strong>Address: </strong> Putalisadak, Kathmandu</p>
-        <p><strong>Phone number: </strong> Putalisadak, Kathmandu</p>
-        <p><strong>Feedback: </strong>nomailtome@gmail.com</p>
+        <p><strong>Phone number: </strong> 9865993612, Kathmandu</p>
+        <p><strong>Feedback: </strong>rentalbike90@gmail.com</p>
     </div>
 
     <div class="col2">
@@ -383,19 +383,19 @@
         <a href="#">Contact us</a>
     </div>
 
-    <div class="col-install">
-        <h4>Install App</h4>
-        <p>From the App Store or Google play</p>
-        <div class="row">
-            <img src="/images/appStorelogo.jpeg" alt="logo1" width="100px" height="100px">
-            <img src="/images/googleStorelogo.jpeg" alt="logo2" width="100px" height="100px">
-        </div>
-        <p>Secured Payment Gateways</p>
-        <img src="/images/visa2.jpeg" alt="paymentlogo" width="250px" height="80px">
-    </div>
+<!--    <div class="col-install">-->
+<!--        <h4>Install App</h4>-->
+<!--        <p>From the App Store or Google play</p>-->
+<!--        <div class="row">-->
+<!--            <img src="/images/appStorelogo.jpeg" alt="logo1" width="100px" height="100px">-->
+<!--            <img src="/images/googleStorelogo.jpeg" alt="logo2" width="100px" height="100px">-->
+<!--        </div>-->
+<!--        <p>Secured Payment Gateways</p>-->
+<!--        <img src="/images/visa2.jpeg" alt="paymentlogo" width="250px" height="80px">-->
+<!--    </div>-->
 </footer>
 <div class="footer-bottom">
-    <p>&copy; 2023 Your Website. All rights reserved.</p>
+    <p>Thank You!!! <a href="#"th:href="@{/user/home}">Brental</a></p>
 </div>
 </body>
 </html>

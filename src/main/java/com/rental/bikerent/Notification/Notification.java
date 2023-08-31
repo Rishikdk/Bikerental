@@ -1,3 +1,8 @@
+package com.rental.bikerent.Notification;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 //package com.rental.bikerent.Notification;
 //
 //import com.rental.bikerent.model.User;
@@ -71,3 +76,13 @@
 //        this.isRead = isRead;
 //    }
 //}
+@RestController
+public class Notification {
+
+    @GetMapping("/send-notification")
+    public String sendNotification() {
+        // Create a JavaScript snippet to log a message in the browser console
+        String jsScript = "console.log('Hello from Java!');";
+        return "<script>" + jsScript + "</script>";
+    }
+}

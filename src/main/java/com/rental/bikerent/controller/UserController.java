@@ -37,6 +37,9 @@ public class UserController {
             return "Normal/product";
     }
 
+    @RequestMapping("/do_Verification")
+    public String OTP(){return "Normal/OTPVerification";}
+
 
 }
 

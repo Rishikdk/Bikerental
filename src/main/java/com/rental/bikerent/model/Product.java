@@ -15,7 +15,7 @@ public class Product {
     private Long pId;
     private String pName;
     private int pPrice;
-    @Column(nullable = true, length=65)
+
     private String pPic;
 
     private java.sql.Date pRepair;

@@ -1,10 +1,6 @@
 package com.rental.bikerent.map;
 
-import com.rental.bikerent.model.Category;
-
-import javax.persistence.Column;
-import javax.persistence.ManyToOne;
-import java.util.Date;
+import java.sql.Date;
 
 public class AdRproductDto {
     private Long pId;
@@ -12,11 +8,20 @@ public class AdRproductDto {
     private int pPrice;
 
     private String pPic;
-    private Date pRepair;
+    private java.sql.Date pRepair;
     private int pDiscount;
 
     private int pQuantity;
-private long categoryId;
+    private String categoryTitle;
+
+    public String getCategoryTitle() {
+        return categoryTitle;
+    }
+
+    public void setCategoryTitle(String categoryTitle) {
+        this.categoryTitle = categoryTitle;
+    }
+
     private int pbooked;
 
     public Long getpId() {
@@ -55,8 +60,8 @@ private long categoryId;
         return pRepair;
     }
 
-    public void setpRepair(Date pRepair) {
-        this.pRepair = pRepair;
+    public void setpRepair(java.sql.Date pRepair) {
+        this.pRepair =  pRepair;
     }
 
     public int getpDiscount() {

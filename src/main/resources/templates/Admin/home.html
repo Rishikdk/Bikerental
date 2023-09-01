@@ -31,46 +31,7 @@
 <!--    <link rel="stylesheet" th:href="@{/css/style.css}"/>-->
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary mt-0">
-    <div class="container-fluid text-bg-primary p-3">
-        <a class="navbar-brand" href="#">BIKE RENTAL</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" th:href="@{/home}">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" th:href="@{/logout}">LOGOUT</a>
-                </li>
-<!--                <li class="nav-item dropdown">-->
-<!--                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
-<!--                        CATEGORY-->
-<!--                    </a>-->
-<!--                    <ul class="dropdown-menu">-->
-<!--                        <li><a class="dropdown-item" href="#">NEW ARRIVAL</a></li>-->
-<!--                        <li><a class="dropdown-item" href="#">STOCK PRODUCTS</a></li>-->
-<!--                        <li><a class="dropdown-item" href="#">SECOND HAND PRODUCTS</a></li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-
-            </ul>
-
-        </div>
-    </div>
-</nav>
-
-
-<div class="header mt-3">
-    <div class="heade-body text-center text-muted">
-        <h1>WELCOME TO ADMIN PAGE</h1>
-    </div>
-
-</div>
-
+<section>
 
 <div class="container admin">
     <div class="row mt-3">
@@ -82,7 +43,7 @@
                         <img style="max-width: 100px;" class="img-fluid rounded-circle" src="/img/user.png" alt="user">
                     </div>
                     <h1>5</h1>
-                    <h1 class="text-muted">USER</h1>
+                    <h1 class="text-muted"><a href="#"th:href="@{/admin/user}">USER</a></h1>
                 </div>
             </div>
 
@@ -95,7 +56,7 @@
                         <img style="max-width: 100px;" class="img-fluid rounded-circle" src="/img/category.png" alt="category">
                     </div>
                     <h1>3</h1>
-                    <h1 class="text-muted">CATEGORY</h1>
+                    <h1 class="text-muted"><a href="#"th:href="@{/admin/category}">CATEGORY</a></h1>
                 </div>
             </div>
         </div>
@@ -107,7 +68,7 @@
                         <img style="max-width: 100px;" class="img-fluid rounded-circle" src="/img/products.png" alt="products">
                     </div>
                     <h1>35</h1>
-                    <h1 class="text-muted">PRODUCTS</h1>
+                    <h1 class="text-muted"><a href="#"th:href="@{/admin/product}">PRODUCTS</a></h1>
                 </div>
             </div>
         </div>
@@ -125,7 +86,7 @@
                         <img style="max-width: 100px;" class="img-fluid rounded-circle" src="/img/add-category.png" alt="add-category">
                     </div>
                     <p class="mt-3">CLICK HERE TO ADD CATEGORY</p>
-                    <h1 class="text-muted">ADD CATEGORY</h1>
+                    <h1 class="text-muted"><a href="#"th:href="@{/admin/add_category}">ADD CATEGORY</a></h1>
                 </div>
             </div>
         </div>
@@ -137,8 +98,8 @@
                     <div class="container">
                         <img style="max-width: 100px;" class="img-fluid rounded-circle" src="/img/add-products.png" alt="add-products">
                     </div>
-                    <p class="mt-3">CLICK HERE TO ADD PRODUCTS</p>
-                    <h1 class="text-muted">ADD PRODUCTS</h1>
+                    <p class="mt-3"><a href="#"th:href="@{/admin/add_Rproduct}">ADD RENTING PRODUCTS</a></p>
+                    <h1 class="text-muted"> <a href="#"th:href="@{/admin/add_Sproduct}">ADD SELL PRODUCTS</a></h1>
                 </div>
             </div>
         </div>
@@ -146,193 +107,8 @@
 </div>
 
 
-<!-- start add category -->
-
-<div class="modal" id="add-category-modal" tabindex="-1" data-bs-backdrop="static">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-secondary text-white">
-                <h5 class="modal-title"> FILL CATEGORY DETAIL</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="form-group">
-                        <input type="number" class="form-control" name="categoryName" placeholder="Enter the Id Here..." required>
-
-                        <input type="text" class="form-control" name="categoryName" placeholder="Enter the Category Title Here..." required>
 
 
-                    </div>
-
-                    <div class="form-group">
-
-                        <textarea style="height: 350px; margin-top: 3px;" class="form-control" name="categoryDescription" placeholder="Enter the Category Details Here" required></textarea>
-                    </div>
-
-                    <div class="button text-center" style="margin-top: 3px;">
-                        <button class="btn btn-outline-success">ADD CATEGORY</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- end add category -->
-
-<!-- start add products -->
-
-<div class="modal" id="add-products-modal" tabindex="-1" data-bs-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header bg-secondary text-white">
-                <h5 class="modal-title"> FILL PRODUCTS DETAIL</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-
-
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rentForm" >
-                    RENTING FORM
-                </button>
-
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sellForm" >
-                    SELLING FORM
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!--renting form start-->
-
-
-<div class="modal fade" id="rentForm" tabindex="-1" aria-labelledby="rentFormLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="rentFormLabel">Renting Form</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="post">
-
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="text" class="form-control" name="productName" placeholder="Enter the products name here..." required>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <textarea style="height: 250px; margin-top: 3px;" class="form-control" name="productDescription" placeholder="Enter the product description here" required></textarea>
-                    </div>
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="number" class="form-control" name="productPrice" placeholder="Enter the final selling price here..." required>
-
-                    </div>
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="number" class="form-control" name="productDiscount" placeholder="Enter Discount here..." required>
-
-                    </div>
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="number" class="form-control" name="productQuantity" placeholder="Enter the products quantity here..." required>
-
-                    </div>
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="date" class="form-control" name="productQuantity" placeholder="Last repaired on..." required>
-
-                    </div>
-
-                    <div class="mb-3" style="margin-top: 3px;">
-                        <!-- <label for="formFileMultiple" class="form-label"></label> -->
-                        <input class="form-control" type="file" id="formFileMultiple" multiple>
-                    </div>
-
-                    <div class="button text-center" style="margin-top: 3px;">
-                        <button class="btn btn-outline-success">SUBMIT</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!--renting form ends here-->
-
-<!--selling form start-->
-
-<div class="modal fade" id="sellForm" tabindex="-1" aria-labelledby="rentFormLabel1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="rentFormLabel1">Renting Form</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="post">
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="number" class="form-control" name="productDiscount" placeholder="Enter Id here..." required>
-
-                    </div>
-
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="text" class="form-control" name="productName" placeholder="Enter the products name here..." required>
-
-                    </div>
-
-                    <div class="form-group">
-                        <textarea style="height: 250px; margin-top: 3px;" class="form-control" name="productDescription" placeholder="Enter the product description here" required></textarea>
-                    </div>
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="number" class="form-control" name="productPrice" placeholder="Enter the selling price here..." required>
-
-                    </div>
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="number" class="form-control" name="productDiscount" placeholder="Enter Discount here..." required>
-
-                    </div>
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="text" class="form-control" name="productDiscount" placeholder="Enter brand name here..." required>
-
-                    </div>
-
-                    <div class="form-group" style="margin-top: 3px;">
-                        <input type="number" class="form-control" name="productQuantity" placeholder="Enter the products quantity here..." required>
-
-                    </div>
-
-                    <div class="mb-3" style="margin-top: 3px;">
-                        <!-- <label for="formFileMultiple" class="form-label"></label> -->
-                        <input class="form-control" type="file" id="formFileMultiple1" multiple>
-                    </div>
-
-                    <div class="button text-center" style="margin-top: 3px;">
-                        <button class="btn btn-outline-success">SUBMIT</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--selling form ends here-->
 
 
 
@@ -354,5 +130,6 @@
 <!--  sellingform.style.display = "none";-->
 <!--}-->
 <!--</script>-->
+</section>
 </body>
 </html>

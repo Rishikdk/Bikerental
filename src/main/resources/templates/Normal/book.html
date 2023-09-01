@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+  <title>Document</title>
+</head>
+<body>
+
+<section id="navbar">
+  <div class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <h3>RENTAL</h3>
+      </a>
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">PRODUCTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">SERVICES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">CONTACTS</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="margin: 50px; padding: 10px; justify-content: center;">
+  <h1>Renting Form</h1>
+  <form action="post" style="width: 100%; align-items: center; justify-content: center;">
+    <div class="form-group">
+      <!--  Name Entities start here -->
+
+      <div class="row">
+        <div class="col">
+          <label for="FormControlInput1" required>First Name</label>
+          <input type="text" class="form-control" placeholder="First name">
+        </div>
+
+        <div class="col">
+          <label for="FormControlInput1">Middle Name</label>
+          <input type="text" class="form-control" placeholder="Last name">
+        </div>
+
+
+        <div class="col">
+          <label for="FormControlInput1" required>Last Name</label>
+          <input type="text" class="form-control" placeholder="Last name">
+        </div>
+      </div>
+    </div>
+    <!--  Name Entities end here -->
+
+    <div style="margin-top: 5px;">
+
+      <div class="form-group">
+        <label for="FormControlFile1">Insert Your PP size photo</label><br>
+        <input type="file" class="form-control-file" id="FormControlFile1">
+      </div>
+
+    </div>
+
+    <!--  email Entities start here -->
+
+    <label for="FormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="FormControlInput1" placeholder="name@gmail.com">
+    <label for="FormControlInput1">Contact Number</label>
+    <input type="number" class="form-control" id="contactnum" placeholder="98...." required>
+
+    <!--  email Entities ends here -->
+    <hr>
+
+    <div class="form-group">
+      <label for="FormControlSelect1">Brand</label>
+      <select class="form-control" id="FormControlSelect1" placeholder="Select The brand">
+        <option>Mountain-Bike</option>
+        <option>Boys Bike</option>
+        <option>Girls Bike</option>
+        <option>Premium Bikes</option>
+        <option>Track Bike</option>
+      </select>
+    </div>
+
+    <div class="col">
+      <label for="FormControlInput1">Bike Name</label>
+      <input type="number" class="form-control" placeholder="Name">
+    </div>
+
+    <div class="col">
+      <label for="FormControlInput1">Quantity</label>
+      <input type="number" class="form-control" placeholder="Number of Bikes">
+    </div>
+
+    <div class="col" style="margin-top: 5px;">
+      <button type="button" class="btn btn-outline-primary" type="submit">Submit</button>
+      <button type="button" class="btn btn-danger" type="reset">Cancel</button>
+
+    </div>
+
+
+
+  </form>
+
+</section>
+
+
+</body>
+</html>

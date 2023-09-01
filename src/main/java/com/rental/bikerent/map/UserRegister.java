@@ -24,7 +24,7 @@ public class UserRegister {
     private BCryptPasswordEncoder PasswordEncoder;
     @Autowired
     private UserRepository userRepository;
-    @RequestMapping(value="/do_Verification", method= RequestMethod.POST)
+    @RequestMapping(value="/do_register", method= RequestMethod.POST)
     public String registerUser( @ModelAttribute("user") User user, Model model, HttpSession session) {
       /*   try {
            if (result.hasErrors()) {
@@ -60,7 +60,7 @@ public class UserRegister {
 //            model.addAttribute("user", new User());
             /*session.setAttribute("message", new Message("Successfully Register!!",
                     "alert-error"));*/
-            return "/user/do_Verification";
+            return "/Admin/home";
         /*}
         catch (Exception e) {
             e.printStackTrace();

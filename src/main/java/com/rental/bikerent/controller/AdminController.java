@@ -71,6 +71,7 @@ private UserRepository userRepository;
         model.addAttribute("title","Product-Bike Rental");
         model.addAttribute("products",arproductRepository.findAll());
         model.addAttribute("sellings",aSellingProductRepository.findAll());
+        model.addAttribute("categorys",acategoryRepository.findAll());
 
         return "/Admin/product";
     }

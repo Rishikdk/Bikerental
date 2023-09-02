@@ -13,6 +13,10 @@
       <tr  th:if="${products.empty}" >
         <td>Nothing found</td>
       </tr>
+    <tr  th:if="${categorys.empty}" >
+      <td>Nothing found</td>
+    </tr>
+
     <thead>
     <tr>
       <th scope="col">ID</th>
@@ -23,11 +27,16 @@
       <th scope="col">Quantity</th>
       <th scope="col">Booked</th>
       <th scope="col">Image</th>
+      <th scope="col">Action</th>
+
+      <!--      <th scope="col">Description</th>-->
+
 
     </tr>
     </thead>
 
     <tbody>
+
     <tr th:each="product : ${products}">
       <td th:text="${product.pId}"></td>
       <td th:text="${product.pName}"></td>
@@ -37,9 +46,17 @@
       <td th:text="${product.pQuantity}"></td>
       <td th:text="${product.pbooked}"></td>
       <td><img style="height: 40px; width: auto;" th:src="'/pic/' + ${product.pPic}"></td>
+      <td><form th:action="@{/deleteProduct}" method="post">
+        <input hidden="hidden" name="id" th:value="${product.pId}">
+        <button type="submit">
+          Delete
+        </button>
+      </form>
 
-
-  </tbody>
+<!--    <td th:each="category : ${categorys}"  th:text="${category.categoryDec}">-->
+<!--      <td th:text="${category.categoryDec}"></td>-->
+    </tbody>
+    </tr>
     </tr>
   </table>
   <h1>Selling</h1>
@@ -58,6 +75,8 @@
       <th scope="col">Brand</th>
       <th scope="col">Description</th>
       <th scope="col">Image</th>
+      <th scope="col">Action</th>
+
 
     </tr>
     </thead>
@@ -75,6 +94,12 @@
 
       <td><img style="height: 40px; width: auto;" th:src="'/spic/' + ${selling.sPic}">
       </td>
+      <td><form th:action="@{/deleteSelling}" method="post">
+        <input hidden="hidden" name="id" th:value="${selling.id}">
+        <button type="submit">
+          Delete
+        </button>
+      </form>
     </tr>
     </tbody>
   </table>

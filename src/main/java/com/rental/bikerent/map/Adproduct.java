@@ -27,31 +27,12 @@ public class Adproduct {
     private  AcategoryRepository acategoryRepository;
 
 
+    @RequestMapping(value="/deleteProduct", method= RequestMethod.POST)
+    public String deleteRenting(@RequestParam("id") Integer id){
 
-//    @RequestMapping(value="/add_Rentingp", method= RequestMethod.POST)
-//
-//    public String arproduct(@RequestBody AdRproductDto adRproductDto) throws Exception {
-//        Product product= new Product();
-//        Category category = acategoryRepository.findById(1)
-//                .orElseThrow(() -> new Exception("Category not found"));
-//        product.setCategory(category);
-//        product.setpName(adRproductDto.getpName());
-//        product.setpPic(adRproductDto.getpPic());
-//        product.setPbooked(adRproductDto.getPbooked());
-//        product.setpDiscount(adRproductDto.getpDiscount());
-//        product.setpQuantity(adRproductDto.getpQuantity());
-//        product.setpPrice(adRproductDto.getpPrice());
-//        product.setpRepair(adRproductDto.getpRepair());
-//
-//
-////        arproductRepository.save((Product)product);
-//        Product product1= arproductRepository.save((Product)product);
-//System.out.println(product1.getpName());
-////        System.out.println(product.getpName());
-//        return "Admin/home";
-//    }
-
-
+        arproductRepository.deleteById(Long.valueOf(id));
+        return "redirect:/admin/product";
+    }
     @RequestMapping(value="/add_Renting", method= RequestMethod.POST)
 //    @PostMapping("/add_Renting")
     public String processRenting(@ModelAttribute AdRproductDto adRproductDto, @RequestParam("profile") MultipartFile file, Principal principal, Model model){

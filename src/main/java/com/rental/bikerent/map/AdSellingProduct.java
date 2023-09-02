@@ -28,6 +28,13 @@ public class AdSellingProduct {
     @Autowired
     private AcategoryRepository acategoryRepository;
 
+    @RequestMapping(value="/deleteSelling", method= RequestMethod.POST)
+    public String deleteSelling(@RequestParam("id") Integer id){
+
+        aSellingProductRepository.deleteById(Long.valueOf(id));
+        return "redirect:/admin/add_Sproduct";
+    }
+
     @RequestMapping(value="/add_Sproduct", method= RequestMethod.POST)
     public String asproduct(@ModelAttribute AdSproductDto adSproductDto , @RequestParam("profileS")MultipartFile file, Principal principal){
         try {

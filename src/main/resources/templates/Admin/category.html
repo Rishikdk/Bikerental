@@ -7,9 +7,40 @@
 </head>
 <body>
 <section>
-  <h1>
-    this is about page
-  </h1>
+
+  <table class="table table-striped">
+    <tr th:if="${category.empty}">
+      category not found
+    </tr>
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Category Title</th>
+      <th scope="col">Decription</th>
+      <!--                            <th scope="col">Quantity</th>-->
+      <!--                            <th scope="col">Image</th>-->
+      <!--                            <th scope="col">Repair</th>-->
+      <!--                            <th scope="col">Action</th>-->
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each=" categoryss : ${category}" >
+      <td th:text="${categoryss.categoryId} "></td>
+      <td th:text="${categoryss.categoryTitle} "></td>
+      <td th:text="${categoryss.CategoryDec} "></td>
+      <!--            <span th:text="${usr.first_name}"></span>-->
+
+
+
+    </tr>
+    </tbody>
+  </table>
+
+
+
+
+
 </section>
 
 </body>

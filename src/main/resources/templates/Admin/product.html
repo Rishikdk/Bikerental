@@ -5,30 +5,78 @@
   <meta charset="UTF-8">
   <title>Title</title>
 </head>
-<body>
+<body style="margin: 10px; padding: 10px; width: 100%;">
 <section>
 
   <h1>Renting</h1>
-  <table>
+  <table class="table table-striped">
       <tr  th:if="${products.empty}" >
         <td>Nothing found</td>
       </tr>
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Repair</th>
+      <th scope="col">Discount</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Booked</th>
+      <th scope="col">Image</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
     <tr th:each="product : ${products}">
       <td th:text="${product.pId}"></td>
       <td th:text="${product.pName}"></td>
       <td th:text="${product.pPrice}"></td>
+      <td th:text="${product.pRepair}"></td>
+      <td th:text="${product.pDiscount}"></td>
+      <td th:text="${product.pQuantity}"></td>
+      <td th:text="${product.pbooked}"></td>
+      <td><img style="height: 40px; width: auto;" th:src="'/pic/' + ${product.pPic}"></td>
+
+
+  </tbody>
     </tr>
   </table>
   <h1>Selling</h1>
-  <table>
+  <table class="table table-striped" >
     <tr  th:if="${sellings.empty}" >
       <td>Nothing found</td>
     </tr>
-    <tr th:each="selling : ${sellings}">
-      <td th:text="${selling.pId}"></td>
-      <td th:text="${selling.pName}"></td>
-      <td th:text="${selling.pPrice}"></td>
+
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Discount</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Description</th>
+      <th scope="col">Image</th>
+
     </tr>
+    </thead>
+
+    <tbody>
+
+    <tr th:each="selling : ${sellings}">
+      <td th:text="${selling.id}"></td>
+      <td th:text="${selling.sname}"></td>
+      <td th:text="${selling.sprice}"></td>
+      <td th:text="${selling.sdis}"></td>
+      <td th:text="${selling.squantity}"></td>
+      <td th:text="${selling.sbrand}"></td>
+      <td th:text="${selling.sdec}"></td>
+
+      <td><img style="height: 40px; width: auto;" th:src="'/spic/' + ${selling.sPic}">
+      </td>
+    </tr>
+    </tbody>
   </table>
 <!--  &lt;!&ndash; Begin Page Content &ndash;&gt;-->
 <!--          <div class="container-fluid">-->
@@ -43,61 +91,61 @@
 
 <!--            </div>-->
 
-            <table class="table table-bordered" th:if = "${size > 0}" >
-              <tr th:if="${product.empty}">
-                user not found
+<!--            <table class="table table-bordered" th:if = "${size > 0}" >-->
+<!--              <tr th:if="${product.empty}">-->
+<!--                user not found-->
 
-              </tr>
-              <thead>
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Category</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Image</th>
-                <th scope="col">Repair</th>
-                <th scope="col">Action</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr th:each = "product : ${products}">
-                <th scope="row" th:text = "${product.pName}"></th>
-                <td th:text = "${product.category.name}"></td>
-                <td th:text = "${product.pPrice}"></td>
-                <td th:text = "${product.pQuantity}"></td>
-<!--                <td>-->
-<!--                  <img class = "my-product-image" style="height: 40px; width: 40px;" alt=""-->
-<!--                       th:src="'data:image/jpeg;base64,' + ${product.pPic}">-->
-<!--                </td>-->
-<!--                <td><a th:href="@{/update-product/{id}(id= ${product.pId})}" class="btn btn-primary">Update</a></td>-->
-<!--                <td>-->
-<!--                  <a th:if="${product.deleted} == true" th:href="@{/enable-product/(id = ${product.pId})}"-->
-<!--                     class="btn btn-primary">Enable</a>-->
-<!--                  <a th:if="${product.deleted} == false" th:href="@{/delete-product/(id = ${product.pId})}"-->
-<!--                     class=" btn btn-danger">Delete</a>-->
-<!--                </td>-->
-              </tr>
-              </tbody>
-            </table>
+<!--              </tr>-->
+<!--              <thead>-->
+<!--              <tr>-->
+<!--                <th scope="col">Name</th>-->
+<!--                <th scope="col">Category</th>-->
+<!--                <th scope="col">Price</th>-->
+<!--                <th scope="col">Quantity</th>-->
+<!--                <th scope="col">Image</th>-->
+<!--                <th scope="col">Repair</th>-->
+<!--                <th scope="col">Action</th>-->
+<!--              </tr>-->
+<!--              </thead>-->
+<!--              <tbody>-->
+<!--              <tr th:each = "product : ${products}">-->
+<!--                <th scope="row" th:text = "${product.pName}"></th>-->
+<!--                <td th:text = "${product.category.name}"></td>-->
+<!--                <td th:text = "${product.pPrice}"></td>-->
+<!--                <td th:text = "${product.pQuantity}"></td>-->
+<!--&lt;!&ndash;                <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <img class = "my-product-image" style="height: 40px; width: 40px;" alt=""&ndash;&gt;-->
+<!--&lt;!&ndash;                       th:src="'data:image/jpeg;base64,' + ${product.pPic}">&ndash;&gt;-->
+<!--&lt;!&ndash;                </td>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td><a th:href="@{/update-product/{id}(id= ${product.pId})}" class="btn btn-primary">Update</a></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <a th:if="${product.deleted} == true" th:href="@{/enable-product/(id = ${product.pId})}"&ndash;&gt;-->
+<!--&lt;!&ndash;                     class="btn btn-primary">Enable</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <a th:if="${product.deleted} == false" th:href="@{/delete-product/(id = ${product.pId})}"&ndash;&gt;-->
+<!--&lt;!&ndash;                     class=" btn btn-danger">Delete</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                </td>&ndash;&gt;-->
+<!--              </tr>-->
+<!--              </tbody>-->
+<!--            </table>-->
 
 
-            <!--Pagination  -->
-<!--            <nav aria-label="...">-->
-<!--              <ul class="pagination" >-->
-<!--                <li th:if= "${currentPage != 0}" class="page-item ">-->
-<!--                  <a th:href = "@{'/products/' + ${currentPage - 1}}" class="page-link">Previous</a>-->
-<!--                </li >-->
-<!--                <li th:each = "i : ${#numbers.sequence(1, totalPages)}" th:classappend = "${currentPage == i - 1 ? 'active' : ''}" class="page-item">-->
-<!--                  <a th:href = "@{'/products/' + ${i - 1}}" class="page-link" href="#">-->
-<!--                             <span th:text = "${i}">-->
-<!--                             </span></a></li>-->
-<!--                <li th:if = "${currentPage + 1 != totalPages}" class="page-item">-->
-<!--                  <a th:href = "@{'/products/' + ${currentPage + 1}}" class="page-link" href="#">Next</a>-->
-<!--                </li>-->
-<!--              </ul>-->
-<!--            </nav>-->
+<!--            &lt;!&ndash;Pagination  &ndash;&gt;-->
+<!--&lt;!&ndash;            <nav aria-label="...">&ndash;&gt;-->
+<!--&lt;!&ndash;              <ul class="pagination" >&ndash;&gt;-->
+<!--&lt;!&ndash;                <li th:if= "${currentPage != 0}" class="page-item ">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <a th:href = "@{'/products/' + ${currentPage - 1}}" class="page-link">Previous</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                </li >&ndash;&gt;-->
+<!--&lt;!&ndash;                <li th:each = "i : ${#numbers.sequence(1, totalPages)}" th:classappend = "${currentPage == i - 1 ? 'active' : ''}" class="page-item">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <a th:href = "@{'/products/' + ${i - 1}}" class="page-link" href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                             <span th:text = "${i}">&ndash;&gt;-->
+<!--&lt;!&ndash;                             </span></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                <li th:if = "${currentPage + 1 != totalPages}" class="page-item">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <a th:href = "@{'/products/' + ${currentPage + 1}}" class="page-link" href="#">Next</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;              </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;            </nav>&ndash;&gt;-->
 
-<!--</div>-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
 
 </section>
 

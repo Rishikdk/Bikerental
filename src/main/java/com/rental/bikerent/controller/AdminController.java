@@ -45,10 +45,12 @@ private AcategoryRepository acategoryRepository;
         return "/Admin/addSproduct";
     }
 
-    @RequestMapping("/category")
+
+
+    @GetMapping("/category")
     public String category(Model model){
         model.addAttribute("title","Category-Bike Rental");
-//        model.addAttribute("category",new ());
+        model.addAttribute("category",acategoryRepository.findAll());
         return "/Admin/category";
     }
 @Autowired

@@ -19,7 +19,7 @@ public class Adcategory {
         Category to = acategoryRepository.save(category);
         System.out.println(to.getCategoryTitle());
 //        System.out.println(product.getpName());
-        return "redirect:/Admin/add_category";
+        return "redirect:/admin/add_category";
     }
 
 

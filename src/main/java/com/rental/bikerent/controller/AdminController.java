@@ -2,9 +2,9 @@ package com.rental.bikerent.controller;
 
 import com.rental.bikerent.model.Category;
 import com.rental.bikerent.model.Product;
+import com.rental.bikerent.model.Sellingp;
 import com.rental.bikerent.model.User;
-import com.rental.bikerent.repository.AcategoryRepository;
-import com.rental.bikerent.repository.RentalRepository;
+import com.rental.bikerent.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,7 +39,9 @@ private AcategoryRepository acategoryRepository;
     @RequestMapping("/add_Sproduct")
     public String aSproduct(Model model){
         model.addAttribute("title","Product-Bike Rental");
-//        model.addAttribute("category",new ());
+        model.addAttribute("sellingp",new Sellingp());
+        model.addAttribute("categories", acategoryRepository.findAll());
+
         return "/Admin/addSproduct";
     }
 
@@ -49,17 +51,25 @@ private AcategoryRepository acategoryRepository;
 //        model.addAttribute("category",new ());
         return "/Admin/category";
     }
-
-    @RequestMapping("/user")
+@Autowired
+private UserRepository userRepository;
+    @GetMapping("/user")
     public String user(Model model){
         model.addAttribute("title","User-Bike Rental");
-//        model.addAttribute("category",new ());
+       model.addAttribute("user",userRepository.findAll());
         return "/Admin/user";
     }
-    @RequestMapping("/product")
+    @Autowired
+    private ArproductRepository arproductRepository;
+
+    @Autowired
+    private ASellingProductRepository aSellingProductRepository;
+    @GetMapping("/product")
     public String product(Model model){
         model.addAttribute("title","Product-Bike Rental");
-//        model.addAttribute("category",new ());
+        model.addAttribute("products",arproductRepository.findAll());
+//        model.addAttribute("selling",aSellingProductRepository.findAll());
+
         return "/Admin/product";
     }
 

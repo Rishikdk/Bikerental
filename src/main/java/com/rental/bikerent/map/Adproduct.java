@@ -1,24 +1,22 @@
 package com.rental.bikerent.map;
 
+import com.rental.bikerent.Dto.AdRproductDto;
 import com.rental.bikerent.model.Category;
 import com.rental.bikerent.model.Product;
 import com.rental.bikerent.repository.AcategoryRepository;
 import com.rental.bikerent.repository.ArproductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.security.Principal;
 import java.util.Objects;
-import java.util.Optional;
 
 @Controller
 public class Adproduct {
@@ -56,8 +54,9 @@ public class Adproduct {
 
     @RequestMapping(value="/add_Renting", method= RequestMethod.POST)
 //    @PostMapping("/add_Renting")
-    public String processRenting(@ModelAttribute AdRproductDto adRproductDto, @RequestParam("profile") MultipartFile file, Principal principal){
+    public String processRenting(@ModelAttribute AdRproductDto adRproductDto, @RequestParam("profile") MultipartFile file, Principal principal, Model model){
     try {
+
 
         String name = principal.getName();
         Category category= this.acategoryRepository.getCategoryByCategoryTitle(adRproductDto.getCategoryTitle());

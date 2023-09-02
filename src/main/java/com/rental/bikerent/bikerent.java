@@ -1,6 +1,6 @@
 package com.rental.bikerent;
 
-import com.rental.bikerent.Email.EmailSenderService;
+//import com.rental.bikerent.Email.EmailSenderService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,12 +1,6 @@
-package com.rental.bikerent.model;
+package com.rental.bikerent.Dto;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name="sell")
-public class Sellingp {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class AdSproductDto {
     private long id;
 
     private String sname;
@@ -16,17 +10,7 @@ public class Sellingp {
     private String sPic;
     private String sbrand;
     private String sdec;
-
-    @ManyToOne
-    private Category categorys;
-
-    public Category getCategorys() {
-        return categorys;
-    }
-
-    public void setCategorys(Category categorys) {
-        this.categorys = categorys;
-    }
+    private String categoryTitle;
 
     public long getId() {
         return id;
@@ -92,9 +76,17 @@ public class Sellingp {
         this.sdec = sdec;
     }
 
+    public String getCategoryTitle() {
+        return categoryTitle;
+    }
+
+    public void setCategoryTitle(String categoryTitle) {
+        this.categoryTitle = categoryTitle;
+    }
+
     @Override
     public String toString() {
-        return "Sellingp{" +
+        return "AdSproductDto{" +
                 "id=" + id +
                 ", sname='" + sname + '\'' +
                 ", sprice=" + sprice +
@@ -103,7 +95,7 @@ public class Sellingp {
                 ", sPic='" + sPic + '\'' +
                 ", sbrand='" + sbrand + '\'' +
                 ", sdec='" + sdec + '\'' +
-                ", categorys=" + categorys +
+                ", categoryTitle='" + categoryTitle + '\'' +
                 '}';
     }
 }

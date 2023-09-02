@@ -60,7 +60,7 @@ public class UserRegister {
 //            model.addAttribute("user", new User());
             /*session.setAttribute("message", new Message("Successfully Register!!",
                     "alert-error"));*/
-            return "/Admin/home";
+            return "/login";
         /*}
         catch (Exception e) {
             e.printStackTrace();

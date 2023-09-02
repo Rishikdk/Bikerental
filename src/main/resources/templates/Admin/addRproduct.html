@@ -35,7 +35,7 @@
 <!--          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
 <!--        </div>-->
 
-  <h1 class="modal-title fs-5" id="rentFormLabel">Renting Product</h1>
+  <h1 class="modal-title fs-5" id="rentFormLabel">Add Renting Product</h1>
         <div class="modal-body">
           <form enctype="multipart/form-data"
                 th:action="@{/add_Renting}" method="post" th:object="${product}" >
@@ -94,7 +94,10 @@
 
             <div class="button text-center" style="margin-top: 3px;">
               <button type="submit" class="btn btn-outline-success">SUBMIT</button>
-              <a href="/" th:href="@{/admin/}">ADMIN </a>
+<!--              <a href="/" th:href="@{/admin/}">Cancel </a>-->
+                <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <a href="/" th:href="@{/admin/}" style="color:white;">Close </a>
+                </button>
 <!--              <button  class="btn btn-secondary" data-bs-dismiss="modal" ><a action="/admin/">Close </a> </button>-->
             </div>
           </form>

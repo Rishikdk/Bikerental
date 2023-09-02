@@ -8,6 +8,7 @@
 <body>
 <section>
 
+
 <!--  <div class="modal fade" id="sellForm" tabindex="-1" aria-labelledby="rentFormLabel1" aria-hidden="true">-->
 <!--    <div class="modal-dialog">-->
 <!--      <div class="modal-content">-->
@@ -15,13 +16,22 @@
 <!--          <h1 class="modal-title fs-5" id="rentFormLabel1">Selling Product</h1>-->
 <!--          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
 <!--        </div>-->
+    <h1 class="modal-title fs-5" id="rentFormLabel"> Add Selling Product</h1>
         <div class="modal-body">
-          <form th:action="@{/add_Sproduct}" method="post" th:object="${sell}">
+          <form enctype="multipart/form-data" th:action="@{/add_Sproduct}" method="post" th:object="${sell}">
 
-            <div class="form-group" style="margin-top: 3px;">
-              <input type="number" class="form-control" name="id" placeholder="Enter Id here..." required>
+<!--            <div class="form-group" style="margin-top: 3px;">-->
+<!--              <input type="number" class="form-control" name="id" placeholder="Enter Id here..." required>-->
 
-            </div>
+<!--            </div>-->
+              <label>
+              </label>
+              <select name="categoryTitle">
+                  <option th:if="${categories.empty}">Not found</option>
+                  <option th:each="category : ${categories}">
+                      <span th:text="${category.categoryTitle}">Category</span>
+                  </option>
+              </select>
 
 
             <div class="form-group" style="margin-top: 3px;">
@@ -55,12 +65,15 @@
 
             <div class="mb-3" style="margin-top: 3px;">
               <!-- <label for="formFileMultiple" class="form-label"></label> -->
-              <input class="form-control" type="file" id="formFileMultiple1" multiple>
+              <input type="file" name="profileS"/>
             </div>
 
             <div class="button text-center" style="margin-top: 3px;">
               <button  type="submit" class="btn btn-outline-success">SUBMIT</button>
-              <a href="/" th:href="@{/admin/}">ADMIN </a>
+<!--              <a href="/" th:href="@{/admin/}">ADMIN </a>-->
+                <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <a href="/" th:href="@{/admin/}" style="color:white;">Close </a>
+                </button>
 <!--              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
             </div>
           </form>

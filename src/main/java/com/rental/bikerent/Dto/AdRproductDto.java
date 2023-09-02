@@ -1,4 +1,4 @@
-package com.rental.bikerent.map;
+package com.rental.bikerent.Dto;
 
 import java.sql.Date;
 

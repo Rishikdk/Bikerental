@@ -7,9 +7,77 @@
 </head>
 <body>
 <section>
-  <h1>
-    this is about page
-  </h1>
+
+
+<!--  &lt;!&ndash; Begin Page Content &ndash;&gt;-->
+<!--          <div class="container-fluid">-->
+<!--            <div class="input-group" style="width: 30%; margin-bottom: 20px;">-->
+<!--              <form th:action = "@{/search-products/0}" method = "get">-->
+<!--                <input type="text" class="form-control rounded" placeholder="Search" name = "keyword" aria-label="Search"-->
+<!--                       aria-describedby="search-addon" />-->
+<!--                <button type="submit" class="btn btn-outline-primary">search</button>-->
+<!--              </form>-->
+<!--            </div>-->
+<!--&lt;!&ndash;            <a th:href="@{/add-product}" class = "btn btn-primary">Add Product</a>&ndash;&gt;-->
+
+<!--            </div>-->
+
+            <table class="table table-bordered" th:if = "${size > 0}" >
+              <tr th:if="${product.empty}">
+                user not found
+
+              </tr>
+              <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Image</th>
+                <th scope="col">Repair</th>
+                <th scope="col">Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each = "product : ${products}">
+                <th scope="row" th:text = "${product.pName}"></th>
+                <td th:text = "${product.category.name}"></td>
+                <td th:text = "${product.pPrice}"></td>
+                <td th:text = "${product.pQuantity}"></td>
+<!--                <td>-->
+<!--                  <img class = "my-product-image" style="height: 40px; width: 40px;" alt=""-->
+<!--                       th:src="'data:image/jpeg;base64,' + ${product.pPic}">-->
+<!--                </td>-->
+<!--                <td><a th:href="@{/update-product/{id}(id= ${product.pId})}" class="btn btn-primary">Update</a></td>-->
+<!--                <td>-->
+<!--                  <a th:if="${product.deleted} == true" th:href="@{/enable-product/(id = ${product.pId})}"-->
+<!--                     class="btn btn-primary">Enable</a>-->
+<!--                  <a th:if="${product.deleted} == false" th:href="@{/delete-product/(id = ${product.pId})}"-->
+<!--                     class=" btn btn-danger">Delete</a>-->
+<!--                </td>-->
+              </tr>
+              </tbody>
+            </table>
+
+
+            <!--Pagination  -->
+<!--            <nav aria-label="...">-->
+<!--              <ul class="pagination" >-->
+<!--                <li th:if= "${currentPage != 0}" class="page-item ">-->
+<!--                  <a th:href = "@{'/products/' + ${currentPage - 1}}" class="page-link">Previous</a>-->
+<!--                </li >-->
+<!--                <li th:each = "i : ${#numbers.sequence(1, totalPages)}" th:classappend = "${currentPage == i - 1 ? 'active' : ''}" class="page-item">-->
+<!--                  <a th:href = "@{'/products/' + ${i - 1}}" class="page-link" href="#">-->
+<!--                             <span th:text = "${i}">-->
+<!--                             </span></a></li>-->
+<!--                <li th:if = "${currentPage + 1 != totalPages}" class="page-item">-->
+<!--                  <a th:href = "@{'/products/' + ${currentPage + 1}}" class="page-link" href="#">Next</a>-->
+<!--                </li>-->
+<!--              </ul>-->
+<!--            </nav>-->
+
+</div>
+
 </section>
 
 </body>

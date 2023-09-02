@@ -32,9 +32,9 @@ public class UserController {
     public String service() {
             return "Normal/service";
         }
-        @RequestMapping("/product")
+        @RequestMapping("/about")
         public String product(){
-            return "Normal/product";
+            return "Normal/about";
     }
 
     @RequestMapping("/do_Verification")

@@ -7,9 +7,28 @@
 </head>
 <body>
 <section>
-    <h1>
-        this is about page
-    </h1>
+
+    <table boder="1" >
+        <tr th:if="${user.empty}">
+            user not found
+
+        </tr>
+
+        <tr th:each=" usr : ${user}" >
+            <td th:text="${usr.firstName} "></td>
+            <td th:text="${usr.lastName} "></td>
+            <td th:text="${usr.email}"></td>
+<!--            <span th:text="${usr.first_name}"></span>-->
+
+
+
+        </tr>
+    </table>
+
+
+
+
+
 </section>
 
 </body>

@@ -68,7 +68,7 @@ private UserRepository userRepository;
     public String product(Model model){
         model.addAttribute("title","Product-Bike Rental");
         model.addAttribute("products",arproductRepository.findAll());
-//        model.addAttribute("selling",aSellingProductRepository.findAll());
+        model.addAttribute("sellings",aSellingProductRepository.findAll());
 
         return "/Admin/product";
     }

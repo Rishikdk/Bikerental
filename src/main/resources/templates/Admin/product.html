@@ -8,7 +8,28 @@
 <body>
 <section>
 
-
+  <h1>Renting</h1>
+  <table>
+      <tr  th:if="${products.empty}" >
+        <td>Nothing found</td>
+      </tr>
+    <tr th:each="product : ${products}">
+      <td th:text="${product.pId}"></td>
+      <td th:text="${product.pName}"></td>
+      <td th:text="${product.pPrice}"></td>
+    </tr>
+  </table>
+  <h1>Selling</h1>
+  <table>
+    <tr  th:if="${sellings.empty}" >
+      <td>Nothing found</td>
+    </tr>
+    <tr th:each="selling : ${sellings}">
+      <td th:text="${selling.pId}"></td>
+      <td th:text="${selling.pName}"></td>
+      <td th:text="${selling.pPrice}"></td>
+    </tr>
+  </table>
 <!--  &lt;!&ndash; Begin Page Content &ndash;&gt;-->
 <!--          <div class="container-fluid">-->
 <!--            <div class="input-group" style="width: 30%; margin-bottom: 20px;">-->
@@ -76,7 +97,7 @@
 <!--              </ul>-->
 <!--            </nav>-->
 
-</div>
+<!--</div>-->
 
 </section>
 

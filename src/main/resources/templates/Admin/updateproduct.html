@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="admin/base::layout(~{::section})" xmlns:height="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+                .dropdown-toggle::after {
+                  content: none;
+                }
+                body
+                {
+                    margin: 0px;
+                }
+
+                .container .card:hover
+                {
+                    background: #e2e2e2;
+                    cursor: pointer;
+                }
+            </style>
+</head>
+<body>
+<section>
+
+
+
+
+
+
+    <!--  <div class="modal fade" id="rentForm" tabindex="-1" aria-labelledby="rentFormLabel" aria-hidden="true">-->
+    <!--    <div class="modal-dialog">-->
+    <!--      <div class="modal-content">-->
+    <!--        <div class="modal-header">-->
+    <!--          <h1 class="modal-title fs-5" id="rentFormLabel">Renting Product</h1>-->
+    <!--          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+    <!--        </div>-->
+
+    <h1 class="modal-title fs-5" id="rentFormLabel">Update Renting Product</h1>
+    <div class="modal-body">
+        <form enctype="multipart/form-data"
+              th:action="@{/updateRproduct}" method="post" th:object="${product}" >
+
+
+
+
+            <label>
+            </label>
+            <select name="categoryTitle">
+                <option th:if="${categories.empty}">Not found</option>
+                <option th:each="category : ${categories}">
+                    <span th:text="${category.categoryTitle}">Category</span>
+                </option>
+            </select>
+
+            <!--              <div class="dropdown mr-1">-->
+            <!--                  <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">-->
+            <!--                      Offset-->
+            <!--                  </button>-->
+            <!--                  <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">-->
+            <!--                      <a class="dropdown-item" href="#">Action</a>-->
+            <!--                      <a class="dropdown-item" href="#">Another action</a>-->
+            <!--                      <a class="dropdown-item" href="#">Something else here</a>-->
+            <!--                  </div>-->
+            <!--              </div>-->
+<!--            <label>-->
+<!--            </label>-->
+<!--            <select name="categoryTitle">-->
+<!--                <option th:if="${categories.empty}">Not found</option>-->
+<!--                <option th:each="category : ${categories}">-->
+<!--                    <span th:text="${category.categoryTitle}">Category</span>-->
+<!--                </option>-->
+<!--            </select>-->
+
+            <input type="hidden" th:value="${product.pId}" name="pId"/>
+
+
+            <div class="form-group" style="margin-top: 3px;">
+                <input th:value="${product.pName}" type="text" class="form-control" name="pName" placeholder="Enter the products name here..." required>
+
+            </div>
+
+            <div class="form-group" style="margin-top: 3px;">
+                <input th:value="${product.pPrice}" type="number" class="form-control" name="pPrice" placeholder="Enter the final selling price here..." required>
+
+            </div>
+
+            <div class="form-group" style="margin-top: 3px;">
+                <input th:value="${product.pDiscount}" type="number" class="form-control" name="pDiscount" placeholder="Enter Discount here..." required>
+
+            </div>
+
+            <div class="form-group" style="margin-top: 3px;">
+                <input th:value="${product.pQuantity}" type="number" class="form-control" name="pQuantity" placeholder="Enter the products quantity here..." required>
+
+            </div>
+
+            <div class="form-group" style="margin-top: 3px;">
+                <input th:value="${product.pRepair}" type="date" class="form-control" name="pRepair" placeholder="Last repaired on..." required>
+
+            </div>
+
+            <div class="form-group">
+               <img style="height:250px width:250px;" src="" th:src="'/pic' +${product.pPic}"/>
+            </div>
+
+            <div class="mb-3" style="margin-top: 3px;">
+                <!-- <label for="formFileMultiple" class="form-label"></label> -->
+                <input type="file" name="profile"/>
+            </div>
+
+            <div class="button text-center" style="margin-top: 3px;">
+                <button type="submit" class="btn btn-outline-success">SAVE</button>
+                <!--              <a href="/" th:href="@{/admin/}">Cancel </a>-->
+                <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <a href="/" th:href="@{/admin/product}" style="color:white;">Close </a>
+                </button>
+                <!--              <button  class="btn btn-secondary" data-bs-dismiss="modal" ><a action="/admin/">Close </a> </button>-->
+            </div>
+        </form>
+    </div>
+</section>
+
+</body>
+</html>

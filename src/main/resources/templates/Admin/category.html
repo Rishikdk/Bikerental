@@ -17,6 +17,8 @@
       <th scope="col">ID</th>
       <th scope="col">Category Title</th>
       <th scope="col">Decription</th>
+      <th scope="col">Action</th>
+
       <!--                            <th scope="col">Quantity</th>-->
       <!--                            <th scope="col">Image</th>-->
       <!--                            <th scope="col">Repair</th>-->
@@ -29,8 +31,15 @@
       <td th:text="${categoryss.categoryId} "></td>
       <td th:text="${categoryss.categoryTitle} "></td>
       <td th:text="${categoryss.CategoryDec} "></td>
-      <!--            <span th:text="${usr.first_name}"></span>-->
-
+      <td>
+        <!--        for delete -->
+        <form th:action="@{/deleteCategory}" method="post">
+          <input hidden="hidden" name="id" th:value="${categoryss.categoryId}">
+          <button type="submit">
+            Delete
+          </button>
+        </form>
+      </td>
 
 
     </tr>

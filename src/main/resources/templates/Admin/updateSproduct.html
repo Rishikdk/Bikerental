@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="admin/base::layout(~{::section})">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<section>
+
+
+  <!--  <div class="modal fade" id="sellForm" tabindex="-1" aria-labelledby="rentFormLabel1" aria-hidden="true">-->
+  <!--    <div class="modal-dialog">-->
+  <!--      <div class="modal-content">-->
+  <!--        <div class="modal-header">-->
+  <!--          <h1 class="modal-title fs-5" id="rentFormLabel1">Selling Product</h1>-->
+  <!--          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+  <!--        </div>-->
+  <h1 class="modal-title fs-5" id="rentFormLabel"> Update Selling Product</h1>
+  <div class="modal-body">
+    <form enctype="multipart/form-data" th:action="@{/updateSproduct}" method="post" th:object="${sell}">
+
+      <!--            <div class="form-group" style="margin-top: 3px;">-->
+      <!--              <input type="number" class="form-control" name="id" placeholder="Enter Id here..." required>-->
+
+      <!--            </div>-->
+      <label>
+      </label>
+      <select name="categoryTitle">
+        <option th:if="${categories.empty}">Not found</option>
+        <option th:each="category : ${categories}">
+          <span th:text="${category.categoryTitle}">Category</span>
+        </option>
+      </select>
+
+      <input type="hidden" th:value="${selling.id}" name="id"/>
+
+      <div class="form-group" style="margin-top: 3px;">
+        <input th:value="${selling.sname}" type="text" class="form-control" name="sname" placeholder="Enter the products name here..." required>
+
+      </div>
+
+      <div class="form-group">
+        <textarea th:text="${selling.sdec}" style="height: 250px; margin-top: 3px;" class="form-control" name="sdec" placeholder="Enter the product description here" required></textarea>
+      </div>
+
+      <div class="form-group" style="margin-top: 3px;">
+        <input th:value="${selling.sprice}" type="number" class="form-control" name="sprice" placeholder="Enter the selling price here..." required>
+
+      </div>
+
+      <div class="form-group" style="margin-top: 3px;">
+        <input th:value="${selling.sdis}" type="number" class="form-control" name="sdis" placeholder="Enter Discount here..." required>
+
+      </div>
+
+      <div class="form-group" style="margin-top: 3px;">
+        <input th:value="${selling.sbrand}" type="text" class="form-control" name="sbrand place"holder="Enter brand name here..." required>
+
+      </div>
+
+      <div class="form-group" style="margin-top: 3px;">
+        <input th:value="${selling.squantity}" type="number" class="form-control" name="squantity" placeholder="Enter the products quantity here..." required>
+
+      </div>
+
+      <div class="form-group">
+        <img style="height:250px width:250px;" src="" th:src="'/spic' +${selling.sPic}"/>
+      </div>
+
+
+      <div class="mb-3" style="margin-top: 3px;">
+        <!-- <label for="formFileMultiple" class="form-label"></label> -->
+        <input type="file" name="profileS"/>
+      </div>
+
+      <div class="button text-center" style="margin-top: 3px;">
+        <button  type="submit" class="btn btn-outline-success">SAVE</button>
+        <!--              <a href="/" th:href="@{/admin/}">ADMIN </a>-->
+        <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          <a href="/" th:href="@{/admin/product}" style="color:white;">Close </a>
+        </button>
+        <!--              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+      </div>
+    </form>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+
+</body>
+</html>

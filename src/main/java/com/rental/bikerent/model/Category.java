@@ -9,7 +9,7 @@ import java.util.List;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto inc of id
-    private int categoryId;
+    private Long categoryId;
     private  String categoryTitle;
     private String categoryDec;
 @OneToMany(mappedBy = "category")
@@ -21,11 +21,11 @@ public class Category {
     public Category() {
     }
 
-    public int getCategoryId() {
+    public Long getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(Long categoryId) {
         this.categoryId = categoryId;
     }
 
@@ -45,12 +45,30 @@ public class Category {
         this.categoryDec = categoryDec;
     }
 
+    public List<Product> getProduct() {
+        return product;
+    }
+
+    public void setProduct(List<Product> product) {
+        this.product = product;
+    }
+
+    public List<Sellingp> getSellingp() {
+        return sellingp;
+    }
+
+    public void setSellingp(List<Sellingp> sellingp) {
+        this.sellingp = sellingp;
+    }
+
     @Override
     public String toString() {
         return "Category{" +
                 "categoryId=" + categoryId +
                 ", categoryTitle='" + categoryTitle + '\'' +
                 ", categoryDec='" + categoryDec + '\'' +
+                ", product=" + product +
+                ", sellingp=" + sellingp +
                 '}';
     }
 }

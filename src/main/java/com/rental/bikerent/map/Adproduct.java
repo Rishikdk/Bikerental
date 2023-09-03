@@ -11,12 +11,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.security.Principal;
 import java.util.Objects;
+
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @Controller
 public class Adproduct {
@@ -33,6 +36,61 @@ public class Adproduct {
         arproductRepository.deleteById(Long.valueOf(id));
         return "redirect:/admin/product";
     }
+//update work
+    @RequestMapping(value="/updateRproduct", method= RequestMethod.POST)
+        public String updateRproduct(@ModelAttribute AdRproductDto adRproductDto, @RequestParam("profile")MultipartFile file, Model model, HttpSession session,Principal principal)
+    {
+        try {
+           Product oldproduct =this.arproductRepository.findById(adRproductDto.getpId()).get();
+                //old data
+//            Product oldproduct= this.arproductRepository.findAllById(productrequest.getpId());
+//            String name= principal.getName();
+            Product product= new Product();
+            Category category= this.acategoryRepository.getCategoryByCategoryTitle(adRproductDto.getCategoryTitle());
+            product.setCategory(category);
+            product.setPbooked(adRproductDto.getPbooked());
+        product.setpId(adRproductDto.getpId());
+        product.setpDiscount(adRproductDto.getpDiscount());
+        product.setpPrice(adRproductDto.getpPrice());
+        product.setpName(adRproductDto.getpName());
+        product.setpRepair(adRproductDto.getpRepair());
+        product.setpQuantity(adRproductDto.getpQuantity());
+//
+            //image..
+            if(!file.isEmpty()){
+
+
+
+//                update new photo
+                Path targetLocation = Paths.get("src/main/resources/static/pic").resolve(Objects.requireNonNull(file.getOriginalFilename()));
+                Files.copy(file.getInputStream(),targetLocation, StandardCopyOption.REPLACE_EXISTING);
+                product.setpPic(file.getOriginalFilename());
+                product.setpPic(file.getOriginalFilename());
+
+
+            }else
+            {
+               product.setpPic(oldproduct.getpPic());
+
+
+            }
+            this.arproductRepository.save(product);
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+
+        }
+
+//        System.out.println("Product name:" + product.getpName());
+        return "redirect:/admin/product";
+        }
+
+
+
+
+
+
     @RequestMapping(value="/add_Renting", method= RequestMethod.POST)
 //    @PostMapping("/add_Renting")
     public String processRenting(@ModelAttribute AdRproductDto adRproductDto, @RequestParam("profile") MultipartFile file, Principal principal, Model model){

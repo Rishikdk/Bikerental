@@ -75,6 +75,26 @@ private UserRepository userRepository;
 
         return "/Admin/product";
     }
+    //handler for update Renting product
+    @RequestMapping(value="/updateRproduct/{pId}", method= RequestMethod.POST)
+    public String updateproduct(@PathVariable("pId") Integer pId,Model model){
+        model.addAttribute("title","Rental-Update");
+        Product product =this.arproductRepository.findById(Long.valueOf(pId)).get();
+        model.addAttribute("categories", acategoryRepository.findAll());
+        model.addAttribute("product",product);
+        return "/Admin/updateproduct";
+    }
+
+
+//handler for updating Selling product
+@RequestMapping(value="/updateSproduct/{id}", method= RequestMethod.POST)
+public String updateSproduct(@PathVariable("id") Integer id,Model model){
+    model.addAttribute("title","Rental-Update");
+    Sellingp sellingp =this.aSellingProductRepository.findById(Long.valueOf(id)).get();
+    model.addAttribute("categories", acategoryRepository.findAll());
+    model.addAttribute("selling",sellingp);
+    return "/Admin/updateSproduct";
+}
 
 
 

@@ -28,6 +28,8 @@
       <th scope="col">Booked</th>
       <th scope="col">Image</th>
       <th scope="col">Action</th>
+      <th scope="col">Modify</th>
+
 
       <!--      <th scope="col">Description</th>-->
 
@@ -46,12 +48,24 @@
       <td th:text="${product.pQuantity}"></td>
       <td th:text="${product.pbooked}"></td>
       <td><img style="height: 40px; width: auto;" th:src="'/pic/' + ${product.pPic}"></td>
-      <td><form th:action="@{/deleteProduct}" method="post">
+      <td>
+<!--        for delete -->
+        <form th:action="@{/deleteProduct}" method="post">
         <input hidden="hidden" name="id" th:value="${product.pId}">
         <button type="submit">
           Delete
         </button>
       </form>
+      </td>
+<!--for update button-->
+      <td>
+        <form th:action="@{'/admin/updateRproduct/'+ ${product.pId}}" method="post">
+<!--          <input hidden="hidden" name="pId" th:value="${product.pId}">-->
+          <button type="submit">
+            Update
+          </button>
+        </form>
+      </td>
 
 <!--    <td th:each="category : ${categorys}"  th:text="${category.categoryDec}">-->
 <!--      <td th:text="${category.categoryDec}"></td>-->
@@ -76,6 +90,7 @@
       <th scope="col">Description</th>
       <th scope="col">Image</th>
       <th scope="col">Action</th>
+      <th scope="col">Modify</th>
 
 
     </tr>
@@ -100,6 +115,16 @@
           Delete
         </button>
       </form>
+      </td>
+<!--      buttom for update-->
+      <td>
+        <form th:action="@{'/admin/updateSproduct/'+ ${selling.id}}" method="post">
+          <!--          <input hidden="hidden" name="pId" th:value="${product.pId}">-->
+          <button type="submit">
+            Update
+          </button>
+        </form>
+      </td>
     </tr>
     </tbody>
   </table>

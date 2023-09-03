@@ -15,14 +15,18 @@
 
     <form th:action="@{/add_category}" method="post" th:object="${category}">
       <div class="form-group">
+        <label>ID:</label>
         <input type="number" class="form-control" name="categoryId" placeholder="Enter the Id Here..." required>
-
-        <input type="text" class="form-control" name="categoryTitle" placeholder="Enter the Category Title Here..." required>
-
-
       </div>
 
+        <div class="form-group">
+          <label>NAME:</label>
+
+          <input type="text" class="form-control" name="categoryTitle" placeholder="Enter the Category Title Here..." required>
+        </div>
+
       <div class="form-group">
+      <label>DESCRIPTION:</label>
 
         <textarea style="height: 350px; margin-top: 3px;" class="form-control" name="categoryDec" placeholder="Enter the Category Details Here" required></textarea>
       </div>

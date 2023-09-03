@@ -21,8 +21,18 @@ public class User {
 //    @Email(regexp="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")
 
     private String email;
+
+    private String phonenum;
     private String password;
     private String role;
+
+    public String getPhonenum() {
+        return phonenum;
+    }
+
+    public void setPhonenum(String phonenum) {
+        this.phonenum = phonenum;
+    }
 
     public Long getId() {
         return id;

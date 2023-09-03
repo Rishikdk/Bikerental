@@ -1,6 +1,7 @@
 package com.rental.bikerent.controller;
 
 import com.rental.bikerent.model.User;
+import com.rental.bikerent.repository.AcategoryRepository;
 import com.rental.bikerent.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -34,11 +35,18 @@ public class UserController {
         }
         @RequestMapping("/about")
         public String product(){
-            return "Normal/about";
+        return "Normal/about";
+    }
+@Autowired
+private AcategoryRepository acategoryRepository;
+    @RequestMapping("/book")
+    public String book(Model model){
+        model.addAttribute("categories", acategoryRepository.findAll());
+        return "/Normal/book";
     }
 
-    @RequestMapping("/do_Verification")
-    public String OTP(){return "Normal/OTPVerification";}
+//    @RequestMapping("/do_Verification")
+//    public String OTP(){return "Normal/OTPVerification";}
 
 
 }

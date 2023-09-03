@@ -11,6 +11,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto inc of id
     private Long categoryId;
     private  String categoryTitle;
+    @Column(length = 50000)
     private String categoryDec;
 @OneToMany(mappedBy = "category")
     private List<Product> product= new ArrayList<>();

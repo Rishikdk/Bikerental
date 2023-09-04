@@ -6,6 +6,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "product")
@@ -30,15 +32,16 @@ public class Product {
     @ManyToOne
    private Category category;
 //connect to user database
-    @ManyToOne
-    private User puser;
 
-    public User getPuser() {
-        return puser;
+    @OneToMany(mappedBy = "product")
+    private List<Book> books= new ArrayList<>();
+
+    public List<Book> getBooks() {
+        return books;
     }
 
-    public void setPuser(User puser) {
-        this.puser = puser;
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 
     public String getPbrand() {
@@ -134,7 +137,6 @@ public class Product {
                 ", pQuantity=" + pQuantity +
                 ", pbooked=" + pbooked +
                 ", category=" + category +
-                ", puser=" + puser +
                 '}';
     }
 }

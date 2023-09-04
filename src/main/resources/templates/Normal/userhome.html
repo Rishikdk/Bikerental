@@ -128,11 +128,6 @@
                 <p><label>Price: </label><span th:text="${selling.sprice}"></span></p>
                 <p><label>Brand: </label><span th:text="${selling.sbrand}"></span></p>
 
-
-
-                <button type="submit" class="btn btn-outline-primary" >
-                    <a th:href="@{/user/book}">Book</a>
-                </button>
             </div>
 
         </div>
@@ -234,14 +229,21 @@
     </div>
 
     <div class="pro-container"  th:each="product : ${products}">
-        <div class="pro">
+        <div class="pro" th:if="${product.pQuantity > product.pbooked}">
             <img  th:src="'/pic/' + ${product.pPic}" alt="image1">
             <div class="desc">
                 <p><label>Name:</label><span th:text="${product.pName}"></span></p>
                 <p><label>Repair: </label><span th:text="${product.pRepair}"></span></p>
                 <p><label>Price: </label><span  th:text="${product.pPrice}"></span></p>
-                <p><label>Quantity: </label><span th:text="${product.pQuantity}"></span></p>
+                <p><label>Quantity: </label><span th:text="${product.pQuantity} - ${product.pbooked}"></span></p>
+
             </div>
+            <form th:action="@{/user/book}" method="post">
+                <input th:value="${product.pId}" name="id" hidden="hidden">
+                <button type="submit" class="btn btn-outline-primary" >
+                    Book
+                </button>
+            </form>
         </div>
 
 <!--        <div class="pro">-->

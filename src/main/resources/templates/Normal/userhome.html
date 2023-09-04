@@ -107,90 +107,97 @@
     </div>
 </section>
 
+
+<!--product section-->
+
+
 <section id="products1">
+    <div  th:if="${sellings.empty}" >
+        Waiting...
+    </div>
     <h2>Selling Products</h2>
     <p> <span>A summary Collection of the New Model </span></p>
-    <div class="pro-container">
-        <div class="pro">
-            <img src="/images/background2.jpg" alt="image1">
-            <div class="desc">
-                <span>BMW</span>
-                <h5>Astraunt</h5>
-                <h4>$280</h4>
+    <div class="pro-container" scope="col" th:each="selling : ${sellings}">
+        <div class="pro container col">
+            <img th:src="'/spic/' + ${selling.sPic}" alt="image1">
+            <div class="brand">
+                <span th:text="${selling.sbrand}"></span>
+                <h5 th:text="${selling.sname}"></h5>
+                <h4 th:text="${selling.sprice}"></h4>
             </div>
         </div>
+    </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background4.webp" alt="image1">-->
+<!--            <div class="desc">-->
+<!--                <span>BMW</span>-->
+<!--                <h5>Astronaut</h5>-->
+<!--                <h4>$280</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="pro">
-            <img src="/images/background4.webp" alt="image1">
-            <div class="desc">
-                <span>BMW</span>
-                <h5>Astronaut</h5>
-                <h4>$280</h4>
-            </div>
-        </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background2.jpg" alt="image1">-->
+<!--            <div class="desc">-->
+<!--                <span>BMW</span>-->
+<!--                <h5>Astronaut</h5>-->
+<!--                <h4>$280</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="pro">
-            <img src="/images/background2.jpg" alt="image1">
-            <div class="desc">
-                <span>BMW</span>
-                <h5>Astronaut</h5>
-                <h4>$280</h4>
-            </div>
-        </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background2.jpg" alt="image1">-->
+<!--            <div class="desc">-->
+<!--                <span>BMW</span>-->
+<!--                <h5>Astronaut</h5>-->
+<!--                <h4>$280</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="pro">
-            <img src="/images/background2.jpg" alt="image1">
-            <div class="desc">
-                <span>BMW</span>
-                <h5>Astronaut</h5>
-                <h4>$280</h4>
-            </div>
-        </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background4.webp" alt="image1">-->
+<!--            <div class="desc">-->
+<!--                <span>BMW</span>-->
+<!--                <h5>Astronaut</h5>-->
+<!--                <h4>$280</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="pro">
-            <img src="/images/background4.webp" alt="image1">
-            <div class="desc">
-                <span>BMW</span>
-                <h5>Astronaut</h5>
-                <h4>$280</h4>
-            </div>
-        </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background2.jpg" alt="image1">-->
+<!--            <div class="desc">-->
+<!--                <span>BMW</span>-->
+<!--                <h5>Astronaut</h5>-->
+<!--                <h4>$280</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="pro">
-            <img src="/images/background2.jpg" alt="image1">
-            <div class="desc">
-                <span>BMW</span>
-                <h5>Astronaut</h5>
-                <h4>$280</h4>
-            </div>
-        </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background2.jpg" alt="image1">-->
+<!--            <div class="desc">-->
+<!--                <span>BMW</span>-->
+<!--                <h5>Astronaut</h5>-->
+<!--                <h4>$280</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="pro">
-            <img src="/images/background2.jpg" alt="image1">
-            <div class="desc">
-                <span>BMW</span>
-                <h5>Astronaut</h5>
-                <h4>$280</h4>
-            </div>
-        </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background4.webp" alt="image1">-->
+<!--            <div class="desc">-->
+<!--                <span>BMW</span>-->
+<!--                <h5>Astraunt</h5>-->
+<!--                <h4>$280</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="pro">
-            <img src="/images/background4.webp" alt="image1">
-            <div class="desc">
-                <span>BMW</span>
-                <h5>Astraunt</h5>
-                <h4>$280</h4>
-            </div>
-        </div>
-
-        <div class="pro">
-            <img src="/images/background2.jpg" alt="image1">
-            <div class="desc">
-                <span>BMW</span>
-                <h5>Astronaut</h5>
-                <h4>$280</h4>
-            </div>
-        </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background2.jpg" alt="image1">-->
+<!--            <div class="desc">-->
+<!--                <span>BMW</span>-->
+<!--                <h5>Astronaut</h5>-->
+<!--                <h4>$280</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
     </div>
 </section>
@@ -203,89 +210,94 @@
 </section>
 <!--ranting product from here-->
 <section id="products2">
+    <div  th:if="${products.empty}">
+        waiting.....
+    </div>
+
     <h2>Renting Product</h2>
     <p> <span>All the below product are for renting </span></p>
-    <div class="pro-container">
+    <div class="pro-container"  th:each="product : ${products}">
         <div class="pro">
-            <img src="/images/background5.webp" alt="image1">
+            <img  th:src="'/pic/' + ${product.pPic}" alt="image1">
             <div class="desc">
-                <span>Hero</span>
-                <h5>Mig Man</h5>
-                <h4>$580</h4>
+                <span th:text="${product.pName}"></span>
+                <h5 th:text="${product.pRepair}"></h5>
+                <h4  th:text="${product.pPrice}"></h4>
+                <h4 th:text="${product.pQuantity}"></h4>
             </div>
         </div>
 
-        <div class="pro">
-            <img src="/images/background3.webp" alt="image2">
-            <div class="desc">
-                <span>Lifelong</span>
-                <h5>LLb</h5>
-                <h4>$460</h4>
-            </div>
-        </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background3.webp" alt="image2">-->
+<!--            <div class="desc">-->
+<!--                <span>Lifelong</span>-->
+<!--                <h5>LLb</h5>-->
+<!--                <h4>$460</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="pro">
-            <img src="/images/background5.webp" alt="image3">
-            <div class="desc">
-                <span>Hero</span>
-                <h5>Mig Man</h5>
-                <h4>$580</h4>
-            </div>
-        </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background5.webp" alt="image3">-->
+<!--            <div class="desc">-->
+<!--                <span>Hero</span>-->
+<!--                <h5>Mig Man</h5>-->
+<!--                <h4>$580</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="pro">
-            <img src="/images/background5.webp" alt="image1">
-            <div class="desc">
-                <span>Hero</span>
-                <h5>Mig Man</h5>
-                <h4>$580</h4>
-            </div>
-        </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background5.webp" alt="image1">-->
+<!--            <div class="desc">-->
+<!--                <span>Hero</span>-->
+<!--                <h5>Mig Man</h5>-->
+<!--                <h4>$580</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="pro">
-            <img src="/images/background3.webp" alt="image2">
-            <div class="desc">
-                <span>Lifelong</span>
-                <h5>LLb</h5>
-                <h4>$460</h4>
-            </div>
-        </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background3.webp" alt="image2">-->
+<!--            <div class="desc">-->
+<!--                <span>Lifelong</span>-->
+<!--                <h5>LLb</h5>-->
+<!--                <h4>$460</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="pro">
-            <img src="/images/background5.webp" alt="image3">
-            <div class="desc">
-                <span>Hero</span>
-                <h5>Mig Man</h5>
-                <h4>$580</h4>
-            </div>
-        </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background5.webp" alt="image3">-->
+<!--            <div class="desc">-->
+<!--                <span>Hero</span>-->
+<!--                <h5>Mig Man</h5>-->
+<!--                <h4>$580</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="pro">
-            <img src="/images/background5.webp" alt="image1">
-            <div class="desc">
-                <span>Hero</span>
-                <h5>Mig Man</h5>
-                <h4>$580</h4>
-            </div>
-        </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background5.webp" alt="image1">-->
+<!--            <div class="desc">-->
+<!--                <span>Hero</span>-->
+<!--                <h5>Mig Man</h5>-->
+<!--                <h4>$580</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="pro">
-            <img src="/images/background3.webp" alt="image2">
-            <div class="desc">
-                <span>Lifelong</span>
-                <h5>LLb</h5>
-                <h4>$460</h4>
-            </div>
-        </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background3.webp" alt="image2">-->
+<!--            <div class="desc">-->
+<!--                <span>Lifelong</span>-->
+<!--                <h5>LLb</h5>-->
+<!--                <h4>$460</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="pro">
-            <img src="/images/background5.webp" alt="image3">
-            <div class="desc">
-                <span>Hero</span>
-                <h5>Mig Man</h5>
-                <h4>$580</h4>
-            </div>
-        </div>
+<!--        <div class="pro">-->
+<!--            <img src="/images/background5.webp" alt="image3">-->
+<!--            <div class="desc">-->
+<!--                <span>Hero</span>-->
+<!--                <h5>Mig Man</h5>-->
+<!--                <h4>$580</h4>-->
+<!--            </div>-->
+<!--        </div>-->
 
     </div>
 </section>

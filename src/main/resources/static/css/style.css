@@ -183,12 +183,15 @@
 /* Products start */
 #products1
 {
-    margin: 10px;
+    display:flex;
+    flex-direction: column;
+    margin: 20px;
     padding: 20px 80px;
     text-align: center;
 }
 #products1 .pro
 {
+
     width: 30%;
     min-width: 300px;
     padding: 10px 15px;
@@ -222,11 +225,11 @@
 #products1 .pro-container
 {
     display: flex;
+    flex-direction: row;
+    gap:10px;
     justify-content: space-between;
     padding-top: 20px;
-    margin-top: 15px;
-    flex-wrap: wrap;
-    gap:20px;
+    margin-top: 10px;
 
 }
 

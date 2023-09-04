@@ -1,6 +1,8 @@
 package com.rental.bikerent.controller;
 
 import com.rental.bikerent.model.User;
+import com.rental.bikerent.repository.ASellingProductRepository;
+import com.rental.bikerent.repository.ArproductRepository;
 import com.rental.bikerent.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -18,9 +20,17 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+@Autowired
+private ArproductRepository arproductRepository;
 
+@Autowired
+private ASellingProductRepository aSellingProductRepository;
     @RequestMapping("/home")
-    public String home(){
+    public String home(Model model){
+        model.addAttribute("title","Home-Bike Rental");
+        model.addAttribute("sellings",aSellingProductRepository.findAll());
+        model.addAttribute("products",arproductRepository.findAll());
+
         return "Normal/userhome";
     }
     @RequestMapping("/contact")

@@ -29,7 +29,7 @@ public class Adproduct {
     @Autowired
     private  AcategoryRepository acategoryRepository;
 
-
+//for delete
     @RequestMapping(value="/deleteProduct", method= RequestMethod.POST)
     public String deleteRenting(@RequestParam("id") Integer id){
 
@@ -92,7 +92,6 @@ public class Adproduct {
 
 
     @RequestMapping(value="/add_Renting", method= RequestMethod.POST)
-//    @PostMapping("/add_Renting")
     public String processRenting(@ModelAttribute AdRproductDto adRproductDto, @RequestParam("profile") MultipartFile file, Principal principal, Model model){
     try {
 
@@ -119,7 +118,7 @@ public class Adproduct {
                 product.setpPic(file.getOriginalFilename());
                 Path targetLocation = Paths.get("src/main/resources/static/pic").resolve(Objects.requireNonNull(file.getOriginalFilename()));
                 Files.copy(file.getInputStream(),targetLocation, StandardCopyOption.REPLACE_EXISTING);
-                System.out.println("uploded");
+              //  System.out.println("uploded");
                 Product product1 = this.arproductRepository.save(product);
                 return "redirect:/admin/add_Rproduct";
 

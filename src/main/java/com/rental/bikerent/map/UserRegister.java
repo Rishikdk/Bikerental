@@ -1,6 +1,6 @@
 package com.rental.bikerent.map;
 
-import com.rental.bikerent.Email.EmailSenderService;
+//import com.rental.bikerent.Email.EmailSenderService;
 import com.rental.bikerent.model.User;
 import com.rental.bikerent.repository.UserRepository;
 //import org.apache.commons.lang3.RandomStringUtils;

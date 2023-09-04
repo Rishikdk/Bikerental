@@ -42,24 +42,16 @@
     <div class="form-group">
       <!--  Name Entities start here -->
 
-      <div class="row">
-        <div class="col">
-          <label for="FormControlInput1" required>First Name</label>
-          <input type="text" class="form-control" placeholder="First name">
-        </div>
-
-<!--        <div class="col">-->
-<!--          <label for="FormControlInput1">Middle Name</label>-->
-<!--          <input type="text" class="form-control" placeholder="Last name">-->
-<!--        </div>-->
+      <div class="form-group" style="margin-top: 3px;">
 
 
-        <div class="col">
-          <label for="FormControlInput1" required>Last Name</label>
-          <input type="text" class="form-control" placeholder="Last name">
-        </div>
+        <span><label>Form:</label><input type="date" class="form-control" name="fdate" placeholder="Last repaired on..." required></span>
+
+
+        <span><label>To:</label>   <input type="date" class="form-control" name="ldate" placeholder="Last repaired on..." required></span>
       </div>
-    </div>
+
+
     <!--  Name Entities end here -->
 
 <!--    <div style="margin-top: 5px;">-->
@@ -73,33 +65,31 @@
 
     <!--  email Entities start here -->
 
-    <label for="FormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="FormControlInput1" placeholder="name@gmail.com">
-    <label for="FormControlInput1">Contact Number</label>
-    <input type="number" class="form-control" id="contactnum" placeholder="98...." required>
+    <label >Quantity:</label>
+    <input type="number" class="form-control" name="bquantity" placeholder="quantity number">
 
-    <!--  email Entities ends here -->
-    <hr>
 
-    <div class="form-group">
-      <label>Category</label>
-      <select class="form-control" name="categoryTitle" placeholder="Select The brand">
-        <option th:if="${categories.empty}">Not found</option>
-        <option th:each="category : ${categories}">
-          <span th:text="${category.categoryTitle}">Category</span>
-        </option>
-      </select>
-    </div>
 
-    <div class="col">
-      <label for="FormControlInput1">Bike Name</label>
-      <input type="number" class="form-control" placeholder="Name">
-    </div>
 
-    <div class="col">
-      <label for="FormControlInput1">Quantity</label>
-      <input type="number" class="form-control" placeholder="Number of Bikes">
-    </div>
+<!--    <div class="form-group">-->
+<!--      <label>Category</label>-->
+<!--      <select class="form-control" name="categoryTitle" placeholder="Select The brand">-->
+<!--        <option th:if="${categories.empty}">Not found</option>-->
+<!--        <option th:each="category : ${categories}">-->
+<!--          <span th:text="${category.categoryTitle}">Category</span>-->
+<!--        </option>-->
+<!--      </select>-->
+<!--    </div>-->
+
+<!--    <div class="col">-->
+<!--      <label for="FormControlInput1">Bike Name</label>-->
+<!--      <input type="number" class="form-control" placeholder="Name">-->
+<!--    </div>-->
+
+<!--    <div class="col">-->
+<!--      <label for="FormControlInput1">Quantity</label>-->
+<!--      <input type="number" class="form-control" placeholder="Number of Bikes">-->
+<!--    </div>-->
 
     <div class="col" style="margin-top: 5px;">
       <button type="submit" class="btn btn-outline-primary">Submit</button>
@@ -108,7 +98,7 @@
     </div>
 
 
-
+</div>
   </form>
 
 </section>

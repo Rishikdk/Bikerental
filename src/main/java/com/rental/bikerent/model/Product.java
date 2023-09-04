@@ -26,8 +26,20 @@ public class Product {
     private int pQuantity;
 
     private int pbooked;
+    //connect to category
     @ManyToOne
    private Category category;
+//connect to user database
+    @ManyToOne
+    private User puser;
+
+    public User getPuser() {
+        return puser;
+    }
+
+    public void setPuser(User puser) {
+        this.puser = puser;
+    }
 
     public String getPbrand() {
         return pbrand;
@@ -122,6 +134,7 @@ public class Product {
                 ", pQuantity=" + pQuantity +
                 ", pbooked=" + pbooked +
                 ", category=" + category +
+                ", puser=" + puser +
                 '}';
     }
 }

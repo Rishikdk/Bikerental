@@ -38,13 +38,13 @@
 
 <section style="margin: 50px; padding: 10px; justify-content: center;">
   <h1>Renting Form</h1>
-  <form  th:action="@{/book}"  method="post" th:object="${user}" >
+  <form  th:action="@{/do_booking}"  method="post" th:object="${book}" >
     <div class="form-group">
       <!--  Name Entities start here -->
 
       <div class="form-group" style="margin-top: 3px;">
 
-
+        <input hidden="hidden" name="pid" th:value="${id}">
         <span><label>Form:</label><input type="date" class="form-control" name="fdate" placeholder="Last repaired on..." required></span>
 
 

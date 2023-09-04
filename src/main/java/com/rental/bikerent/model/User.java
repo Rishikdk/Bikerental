@@ -31,8 +31,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Book> book= new ArrayList<>();
 //connect product
-    @OneToMany(mappedBy = "puser")
-    private List<Product> product= new ArrayList<>();
+
 
     public String getPhonenum() {
         return phonenum;

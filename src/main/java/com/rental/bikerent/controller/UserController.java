@@ -1,6 +1,7 @@
 package com.rental.bikerent.controller;
 
 import com.rental.bikerent.model.User;
+import com.rental.bikerent.repository.AcategoryRepository;
 import com.rental.bikerent.repository.ASellingProductRepository;
 import com.rental.bikerent.repository.ArproductRepository;
 import com.rental.bikerent.repository.UserRepository;
@@ -44,11 +45,18 @@ private ASellingProductRepository aSellingProductRepository;
         }
         @RequestMapping("/about")
         public String product(){
-            return "Normal/about";
+        return "Normal/about";
+    }
+@Autowired
+private AcategoryRepository acategoryRepository;
+    @RequestMapping("/book")
+    public String book(Model model){
+        model.addAttribute("categories", acategoryRepository.findAll());
+        return "/Normal/book";
     }
 
-    @RequestMapping("/do_Verification")
-    public String OTP(){return "Normal/OTPVerification";}
+//    @RequestMapping("/do_Verification")
+//    public String OTP(){return "Normal/OTPVerification";}
 
 
 }

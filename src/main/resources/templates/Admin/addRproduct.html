@@ -50,7 +50,7 @@
 <!--                      <a class="dropdown-item" href="#">Something else here</a>-->
 <!--                  </div>-->
 <!--              </div>-->
-              <label>
+              <label>CATEGORY:
               </label>
               <select name="categoryTitle">
                   <option th:if="${categories.empty}">Not found</option>
@@ -63,32 +63,37 @@
 
 
               <div class="form-group" style="margin-top: 3px;">
+                  <label>NAME:</label>
               <input type="text" class="form-control" name="pName" placeholder="Enter the products name here..." required>
 
             </div>
-
-            <div class="form-group" style="margin-top: 3px;">
+              <label>PRICE:</label>
+              <div class="form-group" style="margin-top: 3px;">
               <input type="number" class="form-control" name="pPrice" placeholder="Enter the final selling price here..." required>
 
             </div>
-
+              <label>DISCOUNT:</label>
             <div class="form-group" style="margin-top: 3px;">
               <input type="number" class="form-control" name="pDiscount" placeholder="Enter Discount here..." required>
 
             </div>
-
+              <label>QUANTITY:</label>
             <div class="form-group" style="margin-top: 3px;">
               <input type="number" class="form-control" name="pQuantity" placeholder="Enter the products quantity here..." required>
 
             </div>
+              <label>REPAIR:</label>
 
             <div class="form-group" style="margin-top: 3px;">
-              <input type="date" class="form-control" name="pRepair" placeholder="Last repaired on..." required>
+                <label>REPAIR:</label>
+
+                <input type="date" class="form-control" name="pRepair" placeholder="Last repaired on..." required>
 
             </div>
 
             <div class="mb-3" style="margin-top: 3px;">
-              <!-- <label for="formFileMultiple" class="form-label"></label> -->
+                <label>PROFILE:</label>
+                <!-- <label for="formFileMultiple" class="form-label"></label> -->
               <input type="file" name="profile"/>
             </div>
 

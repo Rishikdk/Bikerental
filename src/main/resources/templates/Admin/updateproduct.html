@@ -76,32 +76,44 @@
 
 
             <div class="form-group" style="margin-top: 3px;">
+                <label>NAME:</label>
                 <input th:value="${product.pName}" type="text" class="form-control" name="pName" placeholder="Enter the products name here..." required>
 
             </div>
 
             <div class="form-group" style="margin-top: 3px;">
+                <label>PRICE:</label>
                 <input th:value="${product.pPrice}" type="number" class="form-control" name="pPrice" placeholder="Enter the final selling price here..." required>
 
             </div>
 
             <div class="form-group" style="margin-top: 3px;">
+                <label>DISCOUNT:</label>
                 <input th:value="${product.pDiscount}" type="number" class="form-control" name="pDiscount" placeholder="Enter Discount here..." required>
 
             </div>
 
             <div class="form-group" style="margin-top: 3px;">
+                <label>QUANTITY:</label>
                 <input th:value="${product.pQuantity}" type="number" class="form-control" name="pQuantity" placeholder="Enter the products quantity here..." required>
 
             </div>
 
             <div class="form-group" style="margin-top: 3px;">
+                <label>BRAND:</label>
+                <input th:value="${product.pbrand}" type="number" class="form-control" name="pbrand" placeholder="Enter the products brand name..." required>
+
+            </div>
+
+            <div class="form-group" style="margin-top: 3px;">
+                <label>REPAIR:</label>
                 <input th:value="${product.pRepair}" type="date" class="form-control" name="pRepair" placeholder="Last repaired on..." required>
 
             </div>
 
             <div class="form-group">
-               <img style="height:250px width:250px;" src="" th:src="'/pic' +${product.pPic}"/>
+                <label>IMAGE:</label>
+                <img style="width:250px;" src="" th:src="'/pic' +${product.pPic}"/>
             </div>
 
             <div class="mb-3" style="margin-top: 3px;">

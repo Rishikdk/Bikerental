@@ -36,35 +36,41 @@
       <input type="hidden" th:value="${selling.id}" name="id"/>
 
       <div class="form-group" style="margin-top: 3px;">
+        <label>NAME:</label>
         <input th:value="${selling.sname}" type="text" class="form-control" name="sname" placeholder="Enter the products name here..." required>
 
       </div>
 
-      <div class="form-group">
-        <textarea th:text="${selling.sdec}" style="height: 250px; margin-top: 3px;" class="form-control" name="sdec" placeholder="Enter the product description here" required></textarea>
-      </div>
+<!--      <div class="form-group">-->
+<!--        <textarea th:text="${selling.sdec}" style="height: 250px; margin-top: 3px;" class="form-control" name="sdec" placeholder="Enter the product description here" required></textarea>-->
+<!--      </div>-->
 
       <div class="form-group" style="margin-top: 3px;">
+        <label>PRICE:</label>
         <input th:value="${selling.sprice}" type="number" class="form-control" name="sprice" placeholder="Enter the selling price here..." required>
 
       </div>
 
       <div class="form-group" style="margin-top: 3px;">
+        <label>DISCOUNT:</label>
         <input th:value="${selling.sdis}" type="number" class="form-control" name="sdis" placeholder="Enter Discount here..." required>
 
       </div>
 
       <div class="form-group" style="margin-top: 3px;">
+        <label>BRAND:</label>
         <input th:value="${selling.sbrand}" type="text" class="form-control" name="sbrand place"holder="Enter brand name here..." required>
 
       </div>
 
       <div class="form-group" style="margin-top: 3px;">
+        <label>QUANTITY:</label>
         <input th:value="${selling.squantity}" type="number" class="form-control" name="squantity" placeholder="Enter the products quantity here..." required>
 
       </div>
 
       <div class="form-group">
+        <label>IMAGE:</label>
         <img style="height:250px width:250px;" src="" th:src="'/spic' +${selling.sPic}"/>
       </div>
 

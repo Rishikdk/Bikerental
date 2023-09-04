@@ -21,11 +21,21 @@ public class Product {
     private java.sql.Date pRepair;
     private int pDiscount;
 
+    private String pbrand;
+
     private int pQuantity;
 
     private int pbooked;
     @ManyToOne
    private Category category;
+
+    public String getPbrand() {
+        return pbrand;
+    }
+
+    public void setPbrand(String pbrand) {
+        this.pbrand = pbrand;
+    }
 
     public Long getpId() {
         return pId;
@@ -108,12 +118,15 @@ public class Product {
                 ", pPic='" + pPic + '\'' +
                 ", pRepair=" + pRepair +
                 ", pDiscount=" + pDiscount +
+                ", pbrand='" + pbrand + '\'' +
                 ", pQuantity=" + pQuantity +
                 ", pbooked=" + pbooked +
                 ", category=" + category +
                 '}';
     }
 }
+
+
 //    public void setpRepair(String pRepair) throws ParseException {
 ////        DateTimeFormatter formatter= DateTimeFormatter.ofPattern("yyyy-mm-dd");
 //

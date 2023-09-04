@@ -10,9 +10,18 @@ public class AdRproductDto {
     private String pPic;
     private java.sql.Date pRepair;
     private int pDiscount;
+    private String pbrand;
 
     private int pQuantity;
     private String categoryTitle;
+
+    public String getPbrand() {
+        return pbrand;
+    }
+
+    public void setPbrand(String pbrand) {
+        this.pbrand = pbrand;
+    }
 
     public String getCategoryTitle() {
         return categoryTitle;
@@ -97,7 +106,9 @@ public class AdRproductDto {
                 ", pPic='" + pPic + '\'' +
                 ", pRepair=" + pRepair +
                 ", pDiscount=" + pDiscount +
+                ", pbrand='" + pbrand + '\'' +
                 ", pQuantity=" + pQuantity +
+                ", categoryTitle='" + categoryTitle + '\'' +
                 ", pbooked=" + pbooked +
                 '}';
     }

@@ -33,6 +33,14 @@ public class User {
 //connect product
 
 
+    public List<Book> getBook() {
+        return book;
+    }
+
+    public void setBook(List<Book> book) {
+        this.book = book;
+    }
+
     public String getPhonenum() {
         return phonenum;
     }
@@ -98,5 +106,17 @@ public class User {
 //                    name = "role_id", referencedColumnName = "id"))
 
 
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phonenum='" + phonenum + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                ", book=" + book +
+                '}';
+    }
 }

@@ -57,7 +57,7 @@ private ASellingProductRepository aSellingProductRepository;
     }
 @Autowired
 private AcategoryRepository acategoryRepository;
-    @PostMapping("/book")
+    @RequestMapping("/book")
     public String book(Model model,@RequestParam("id") Integer id){
         model.addAttribute("id", id);
 

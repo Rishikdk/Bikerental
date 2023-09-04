@@ -36,6 +36,10 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private List<Book> books= new ArrayList<>();
 
+    public Product(){
+
+    }
+
     public List<Book> getBooks() {
         return books;
     }

@@ -2,6 +2,8 @@ package com.rental.bikerent.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -25,6 +27,12 @@ public class User {
     private String phonenum;
     private String password;
     private String role;
+//connect booking database
+    @OneToMany(mappedBy = "user")
+    private List<Book> book= new ArrayList<>();
+//connect product
+    @OneToMany(mappedBy = "puser")
+    private List<Product> product= new ArrayList<>();
 
     public String getPhonenum() {
         return phonenum;
